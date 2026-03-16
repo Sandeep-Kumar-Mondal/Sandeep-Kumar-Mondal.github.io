@@ -1,26 +1,9 @@
-/* GLOBAL PAGE STYLE */
+/* PAGE */
 
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background: linear-gradient(135deg,#134e4a,#22c55e);
-background-attachment: fixed;
-min-height:100vh;
-}
-
-/* LINKS */
-
-a{
-color:#065f46;
-text-decoration:none;
-}
-
-a:visited{
-color:#065f46;
-}
-
-a:hover{
-opacity:0.8;
+background:#ffffff;
 }
 
 /* HEADER */
@@ -45,6 +28,15 @@ margin:0;
 color:white;
 margin-left:15px;
 font-size:22px;
+text-decoration:none;
+}
+
+.icons a:visited{
+color:white;
+}
+
+.icons a:hover{
+opacity:0.8;
 }
 
 /* HAMBURGER */
@@ -78,6 +70,11 @@ box-shadow:2px 0 10px rgba(0,0,0,0.2);
 padding:12px 30px;
 display:block;
 font-size:18px;
+text-decoration:none;
+color:#065f46;
+}
+
+.sidebar a:visited{
 color:#065f46;
 }
 
@@ -90,6 +87,7 @@ background:#d1fae5;
 .main{
 padding:60px;
 max-width:1000px;
+margin:auto;
 transition:margin-left 0.4s;
 }
 
@@ -99,7 +97,6 @@ transition:margin-left 0.4s;
 display:flex;
 gap:50px;
 align-items:flex-start;
-flex-wrap:nowrap;
 }
 
 .profile img{
@@ -107,11 +104,15 @@ width:260px;
 border-radius:10px;
 }
 
+/* NAME */
+
 .name{
 font-family:'Playfair Display',serif;
 font-size:36px;
 margin-bottom:10px;
 }
+
+/* AFFILIATION */
 
 .affiliation{
 line-height:1.6;
