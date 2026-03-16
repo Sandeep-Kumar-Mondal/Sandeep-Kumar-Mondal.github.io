@@ -8,20 +8,20 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
 
 <style>
 
 body{
 margin:0;
-font-family:'Source Sans Pro',sans-serif;
-background:#f4f6f6;
+font-family:'Inter',sans-serif;
+background:#f7f9f9;
 }
 
 /* HEADER */
 
 .header{
-background:linear-gradient(135deg,#134e4a,#22c55e);
+background:linear-gradient(120deg,#0f766e,#3b82f6);
 color:white;
 padding:20px 60px;
 display:flex;
@@ -30,7 +30,7 @@ align-items:center;
 }
 
 .header h2{
-font-family:'Libre Baskerville',serif;
+font-family:'Playfair Display',serif;
 margin:0;
 }
 
@@ -44,7 +44,7 @@ text-decoration:none;
 }
 
 .icons a:hover{
-color:#d1fae5;
+opacity:0.8;
 }
 
 /* HAMBURGER */
@@ -53,10 +53,10 @@ color:#d1fae5;
 font-size:28px;
 cursor:pointer;
 position:fixed;
-top:20px;
+top:18px;
 left:20px;
 color:white;
-z-index:2;
+z-index:3;
 }
 
 /* SIDEBAR */
@@ -67,11 +67,11 @@ width:0;
 position:fixed;
 top:0;
 left:0;
-background:#ecfdf5;
+background:#ecfeff;
 overflow-x:hidden;
 transition:0.4s;
 padding-top:80px;
-box-shadow:2px 0 10px rgba(0,0,0,0.2);
+box-shadow:2px 0 10px rgba(0,0,0,0.15);
 }
 
 .sidebar a{
@@ -79,19 +79,19 @@ padding:12px 30px;
 display:block;
 font-size:18px;
 text-decoration:none;
-color:#065f46;
+color:#0f766e;
 }
 
 .sidebar a:hover{
-background:#d1fae5;
+background:#cffafe;
 }
 
-/* MAIN */
+/* MAIN CONTENT */
 
 .main{
-margin-left:80px;
 padding:60px;
 max-width:1000px;
+transition:margin-left 0.4s;
 }
 
 /* PROFILE */
@@ -100,17 +100,18 @@ max-width:1000px;
 display:flex;
 gap:50px;
 align-items:flex-start;
+flex-wrap:wrap;
 }
 
 .profile img{
-width:260px;
+width:250px;
 border-radius:10px;
 }
 
 /* NAME */
 
 .name{
-font-family:'Libre Baskerville',serif;
+font-family:'Playfair Display',serif;
 font-size:36px;
 margin-bottom:10px;
 }
@@ -118,14 +119,8 @@ margin-bottom:10px;
 /* AFFILIATION */
 
 .affiliation{
-color:#374151;
 line-height:1.6;
-}
-
-/* PUBLICATIONS */
-
-#papers li{
-margin-bottom:10px;
+color:#374151;
 }
 
 </style>
@@ -138,11 +133,11 @@ margin-bottom:10px;
 
 <!-- SIDEBAR -->
 
-<div id="sidebar" class="sidebar">
+<div id="sidebar" class="sidebar" onclick="toggleNav()">
 
-<a href="#">Home</a>
-<a href="#research">Research</a>
-<a href="#publications">Publications</a>
+<a href="index.html">Home</a>
+<a href="publications.html">Publications</a>
+<a href="#">Research</a>
 <a href="#">CV</a>
 <a href="#">Talks</a>
 
@@ -176,9 +171,9 @@ margin-bottom:10px;
 
 </div>
 
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
 
-<div class="main">
+<div id="main" class="main">
 
 <div class="profile">
 
@@ -189,11 +184,8 @@ margin-bottom:10px;
 <div class="affiliation">
 
 Postdoctoral Fellow<br>
-
 Particle Astrophysics Theory Group & TRIDENT Collaboration<br>
-
 Tsung-Dao Lee Institute<br>
-
 Shanghai Jiao Tong University
 
 </div>
@@ -203,8 +195,7 @@ Shanghai Jiao Tong University
 <p>
 
 I work on high-energy astrophysics, blazar physics,
-multiwavelength spectral energy distribution modeling,
-and gamma-ray data analysis.
+multiwavelength SED modeling and gamma-ray data analysis.
 
 </p>
 
@@ -214,65 +205,31 @@ and gamma-ray data analysis.
 
 </div>
 
-<br><br>
-
-<h2 id="publications">Publications</h2>
-
-<ul id="papers">
-Loading publications...
-</ul>
-
 </div>
 
 <script>
 
-/* Sidebar toggle */
-
 function toggleNav(){
 
-let sidebar = document.getElementById("sidebar");
+let sidebar=document.getElementById("sidebar");
+let main=document.getElementById("main");
 
-if(sidebar.style.width === "250px"){
-sidebar.style.width = "0";
+if(sidebar.style.width==="260px"){
+
+sidebar.style.width="0";
+main.style.marginLeft="0";
+
 }
 else{
-sidebar.style.width = "250px";
-}
+
+sidebar.style.width="260px";
+main.style.marginLeft="260px";
 
 }
 
-/* INSPIRE AUTO PUBLICATIONS */
-
-const inspireID = "1991836";
-
-fetch(`https://inspirehep.net/api/literature?q=author.recid:${inspireID}&size=10`)
-.then(response => response.json())
-.then(data => {
-
-let papers = data.hits.hits;
-
-let html = "";
-
-papers.forEach(paper => {
-
-let title = paper.metadata.titles[0].title;
-
-let year = paper.metadata.publication_info
-? paper.metadata.publication_info[0].year
-: "";
-
-let link = paper.links.html;
-
-html += `<li><a href="${link}" target="_blank">${title}</a> (${year})</li>`;
-
-});
-
-document.getElementById("papers").innerHTML = html;
-
-});
+}
 
 </script>
 
 </body>
-
 </html>
