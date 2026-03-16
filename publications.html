@@ -14,14 +14,25 @@ font-family:'Inter',sans-serif;
 max-width:900px;
 margin:60px auto;
 line-height:1.7;
+background:#f8fafc;
 }
 
 h1{
 font-family:'Playfair Display',serif;
+margin-bottom:30px;
 }
 
 li{
-margin-bottom:12px;
+margin-bottom:18px;
+}
+
+a{
+text-decoration:none;
+color:#0f766e;
+}
+
+a:hover{
+text-decoration:underline;
 }
 
 </style>
@@ -38,33 +49,44 @@ Loading publications...
 
 <script>
 
-const inspireID="1991836";
+const inspireID = "1991836";
 
-fetch(`https://inspirehep.net/api/literature?q=author.recid:${inspireID}&size=20`)
-.then(response=>response.json())
-.then(data=>{
+/* Fetch papers */
 
-let papers=data.hits.hits;
-let html="";
+fetch(`https://inspirehep.net/api/literature?q=author.recid:${inspireID}&sort=mostrecent&size=20`)
+.then(response => response.json())
+.then(data => {
 
-papers.forEach(paper=>{
+let papers = data.hits.hits;
+let html = "";
 
-let title=paper.metadata.titles[0].title;
+papers.forEach(paper => {
 
-let year=paper.metadata.publication_info
-?paper.metadata.publication_info[0].year:"";
+let title = paper.metadata.titles?.[0]?.title || "Untitled";
 
-let link=paper.links.html;
+let year = paper.metadata.publication_info?.[0]?.year || "";
 
-html+=`<li><a href="${link}" target="_blank">${title}</a> (${year})</li>`;
+let authors = paper.metadata.authors
+? paper.metadata.authors.slice(0,3).map(a => a.full_name).join(", ") + " et al."
+: "";
+
+let link = paper.links.html;
+
+html += `
+<li>
+<strong>${authors}</strong><br>
+<a href="${link}" target="_blank">${title}</a> (${year})
+</li>
+`;
 
 });
 
-document.getElementById("papers").innerHTML=html;
+document.getElementById("papers").innerHTML = html;
 
 });
 
 </script>
 
 </body>
+
 </html>
