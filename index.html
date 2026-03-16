@@ -8,18 +8,20 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
 <style>
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f6f6f6;
+font-family:'Source Sans Pro',sans-serif;
+background:#f4f6f6;
 }
 
 /* HEADER */
 
 .header{
-background:linear-gradient(120deg,#1abc9c,#27ae60);
+background:linear-gradient(135deg,#134e4a,#22c55e);
 color:white;
 padding:20px 60px;
 display:flex;
@@ -27,17 +29,22 @@ justify-content:space-between;
 align-items:center;
 }
 
+.header h2{
+font-family:'Libre Baskerville',serif;
+margin:0;
+}
+
 /* ICONS */
 
 .icons a{
 color:white;
-margin-left:15px;
+margin-left:18px;
 font-size:22px;
 text-decoration:none;
 }
 
 .icons a:hover{
-color:#eafaf1;
+color:#d1fae5;
 }
 
 /* HAMBURGER */
@@ -48,7 +55,8 @@ cursor:pointer;
 position:fixed;
 top:20px;
 left:20px;
-color:#2c3e50;
+color:white;
+z-index:2;
 }
 
 /* SIDEBAR */
@@ -59,10 +67,10 @@ width:0;
 position:fixed;
 top:0;
 left:0;
-background:#ecf0f1;
+background:#ecfdf5;
 overflow-x:hidden;
 transition:0.4s;
-padding-top:60px;
+padding-top:80px;
 box-shadow:2px 0 10px rgba(0,0,0,0.2);
 }
 
@@ -71,25 +79,18 @@ padding:12px 30px;
 display:block;
 font-size:18px;
 text-decoration:none;
-color:#2c3e50;
+color:#065f46;
 }
 
 .sidebar a:hover{
-background:#d5f5e3;
+background:#d1fae5;
 }
 
-.sidebar .closebtn{
-position:absolute;
-top:10px;
-right:25px;
-font-size:35px;
-}
-
-/* MAIN CONTENT */
+/* MAIN */
 
 .main{
 margin-left:80px;
-padding:50px;
+padding:60px;
 max-width:1000px;
 }
 
@@ -97,7 +98,7 @@ max-width:1000px;
 
 .profile{
 display:flex;
-gap:40px;
+gap:50px;
 align-items:flex-start;
 }
 
@@ -106,15 +107,25 @@ width:260px;
 border-radius:10px;
 }
 
-/* EMAIL */
+/* NAME */
 
-.email a{
-color:#27ae60;
-text-decoration:none;
+.name{
+font-family:'Libre Baskerville',serif;
+font-size:36px;
+margin-bottom:10px;
 }
 
-.email a:hover{
-text-decoration:underline;
+/* AFFILIATION */
+
+.affiliation{
+color:#374151;
+line-height:1.6;
+}
+
+/* PUBLICATIONS */
+
+#papers li{
+margin-bottom:10px;
 }
 
 </style>
@@ -123,26 +134,21 @@ text-decoration:underline;
 
 <body>
 
-<!-- Sidebar -->
+<span class="menu-btn" onclick="toggleNav()">☰</span>
 
-<div id="mySidebar" class="sidebar">
+<!-- SIDEBAR -->
 
-<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+<div id="sidebar" class="sidebar">
 
 <a href="#">Home</a>
-<a href="#">Research</a>
-<a href="#">Publications</a>
+<a href="#research">Research</a>
+<a href="#publications">Publications</a>
 <a href="#">CV</a>
 <a href="#">Talks</a>
 
 </div>
 
-<!-- Hamburger button -->
-
-<span class="menu-btn" onclick="openNav()">☰</span>
-
-
-<!-- Header -->
+<!-- HEADER -->
 
 <div class="header">
 
@@ -150,19 +156,19 @@ text-decoration:underline;
 
 <div class="icons">
 
-<a href="mailto:kumarsandeepmondal@gmail.com">
+<a href="mailto:kumarsandeepmondal@gmail.com" target="_blank">
 <i class="fa-solid fa-envelope"></i>
 </a>
 
-<a href="https://scholar.google.com/citations?user=g9bjHIUAAAAJ&hl=en">
+<a href="https://scholar.google.com/citations?user=g9bjHIUAAAAJ&hl=en" target="_blank">
 <i class="fa-brands fa-google"></i>
 </a>
 
-<a href="https://inspirehep.net/authors/1991836">
+<a href="https://inspirehep.net/authors/1991836" target="_blank">
 <i class="fa-solid fa-atom"></i>
 </a>
 
-<a href="https://orcid.org/0000-0003-2445-9935">
+<a href="https://orcid.org/0000-0003-2445-9935" target="_blank">
 <i class="fa-brands fa-orcid"></i>
 </a>
 
@@ -170,8 +176,7 @@ text-decoration:underline;
 
 </div>
 
-
-<!-- MAIN PAGE -->
+<!-- MAIN CONTENT -->
 
 <div class="main">
 
@@ -179,174 +184,95 @@ text-decoration:underline;
 
 <div>
 
-<h1>Sandeep Kumar Mondal</h1>
+<div class="name">Sandeep Kumar Mondal</div>
 
-<p>
+<div class="affiliation">
+
 Postdoctoral Fellow<br>
-Particle Astrophysics Theory Group & TRIDENT Collaboration <br>
-Tsung-Dao Lee Insitute <br>
+
+Particle Astrophysics Theory Group & TRIDENT Collaboration<br>
+
+Tsung-Dao Lee Institute<br>
+
 Shanghai Jiao Tong University
-</p>
 
-<p class="email">
-Email:
-<a href="mailto:kumarsandeepmondal@gmail.com">
-kumarsandeepmondal@gmail.com
-</a>
-</p>
+</div>
+
+<br>
 
 <p>
 
-I am an astrophysicist working on high-energy astrophysics,
-blazars, gamma-ray emission and multiwavelength spectral
-energy distribution modeling.
-
-My research uses data from missions such as Fermi-LAT
-and Swift along with theoretical modeling of relativistic jets.
-
-</p>
-
-</div>
-
-
-<img src="photo.jpg">
-
-</div>
-
-</div>
-
-
-<script>
-
-function openNav(){
-document.getElementById("mySidebar").style.width="260px";
-}
-
-function closeNav(){
-document.getElementById("mySidebar").style.width="0";
-}
-
-</script>
-
-</body>
-</html>
-.sidebar a{
-padding:12px 30px;
-text-decoration:none;
-display:block;
-font-size:18px;
-color:#333;
-}
-
-.sidebar a:hover{
-color:#e74c3c;
-}
-
-.sidebar .closebtn{
-position:absolute;
-top:10px;
-right:25px;
-font-size:35px;
-}
-
-/* Main content */
-
-.main{
-padding:40px;
-transition:margin-left .4s;
-}
-
-.header{
-border-bottom:3px solid #e74c3c;
-padding-bottom:10px;
-margin-bottom:30px;
-}
-
-/* Profile section */
-
-.profile{
-display:flex;
-gap:40px;
-align-items:flex-start;
-}
-
-.profile img{
-width:260px;
-border-radius:10px;
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-<!-- Sidebar -->
-
-<div id="mySidebar" class="sidebar">
-
-<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-
-<a href="#">Homepage</a>
-<a href="#">Research</a>
-<a href="#">Publications</a>
-<a href="#">CV</a>
-<a href="#">Talks</a>
-
-</div>
-
-
-<!-- Hamburger button -->
-
-<span class="menu-btn" onclick="openNav()">☰</span>
-
-
-<div class="main">
-
-<div class="header">
-<h2>Sandeep Kumar Mondal | Astrophysicist</h2>
-</div>
-
-
-<div class="profile">
-
-<div>
-
-<h1>Sandeep Kumar Mondal</h1>
-
-<p>
-Department of Physics<br>
-Astrophysics Researcher
-</p>
-
-<p>
 I work on high-energy astrophysics, blazar physics,
-multiwavelength SED modeling, and gamma-ray data analysis
-using Fermi-LAT and Swift observations.
+multiwavelength spectral energy distribution modeling,
+and gamma-ray data analysis.
+
 </p>
 
 </div>
-
 
 <img src="photo.jpg">
 
 </div>
 
-</div>
+<br><br>
 
+<h2 id="publications">Publications</h2>
+
+<ul id="papers">
+Loading publications...
+</ul>
+
+</div>
 
 <script>
 
-function openNav() {
-document.getElementById("mySidebar").style.width = "250px";
+/* Sidebar toggle */
+
+function toggleNav(){
+
+let sidebar = document.getElementById("sidebar");
+
+if(sidebar.style.width === "250px"){
+sidebar.style.width = "0";
+}
+else{
+sidebar.style.width = "250px";
 }
 
-function closeNav() {
-document.getElementById("mySidebar").style.width = "0";
 }
+
+/* INSPIRE AUTO PUBLICATIONS */
+
+const inspireID = "1991836";
+
+fetch(`https://inspirehep.net/api/literature?q=author.recid:${inspireID}&size=10`)
+.then(response => response.json())
+.then(data => {
+
+let papers = data.hits.hits;
+
+let html = "";
+
+papers.forEach(paper => {
+
+let title = paper.metadata.titles[0].title;
+
+let year = paper.metadata.publication_info
+? paper.metadata.publication_info[0].year
+: "";
+
+let link = paper.links.html;
+
+html += `<li><a href="${link}" target="_blank">${title}</a> (${year})</li>`;
+
+});
+
+document.getElementById("papers").innerHTML = html;
+
+});
 
 </script>
 
 </body>
+
 </html>
