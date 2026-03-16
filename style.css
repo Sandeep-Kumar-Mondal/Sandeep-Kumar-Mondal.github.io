@@ -1,0 +1,119 @@
+/* GLOBAL PAGE STYLE */
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background: linear-gradient(135deg,#134e4a,#22c55e);
+background-attachment: fixed;
+min-height:100vh;
+}
+
+/* LINKS */
+
+a{
+color:#065f46;
+text-decoration:none;
+}
+
+a:visited{
+color:#065f46;
+}
+
+a:hover{
+opacity:0.8;
+}
+
+/* HEADER */
+
+.header{
+background:linear-gradient(135deg,#134e4a,#22c55e);
+color:white;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.header h2{
+font-family:'Playfair Display',serif;
+margin:0;
+}
+
+/* ICONS */
+
+.icons a{
+color:white;
+margin-left:15px;
+font-size:22px;
+}
+
+/* HAMBURGER */
+
+.menu-btn{
+font-size:28px;
+cursor:pointer;
+position:fixed;
+top:20px;
+left:20px;
+color:white;
+z-index:3;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+height:100%;
+width:0;
+position:fixed;
+top:0;
+left:0;
+background:#ecfdf5;
+overflow-x:hidden;
+transition:0.4s;
+padding-top:80px;
+box-shadow:2px 0 10px rgba(0,0,0,0.2);
+}
+
+.sidebar a{
+padding:12px 30px;
+display:block;
+font-size:18px;
+color:#065f46;
+}
+
+.sidebar a:hover{
+background:#d1fae5;
+}
+
+/* MAIN CONTENT */
+
+.main{
+padding:60px;
+max-width:1000px;
+transition:margin-left 0.4s;
+}
+
+/* PROFILE */
+
+.profile{
+display:flex;
+gap:50px;
+align-items:flex-start;
+flex-wrap:nowrap;
+}
+
+.profile img{
+width:260px;
+border-radius:10px;
+}
+
+.name{
+font-family:'Playfair Display',serif;
+font-size:36px;
+margin-bottom:10px;
+}
+
+.affiliation{
+line-height:1.6;
+color:#374151;
+}
