@@ -15,19 +15,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:#f7f9f9;
+background:#f6f6f6;
 }
 
 /* HEADER */
 
 .header{
-background:linear-gradient(120deg,#0f766e,#3b82f6);
+background:linear-gradient(135deg,#134e4a,#22c55e);
 color:white;
 padding:20px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 }
+
+/* TITLE FONT */
 
 .header h2{
 font-family:'Playfair Display',serif;
@@ -38,7 +40,7 @@ margin:0;
 
 .icons a{
 color:white;
-margin-left:18px;
+margin-left:15px;
 font-size:22px;
 text-decoration:none;
 }
@@ -53,7 +55,7 @@ opacity:0.8;
 font-size:28px;
 cursor:pointer;
 position:fixed;
-top:18px;
+top:20px;
 left:20px;
 color:white;
 z-index:3;
@@ -67,11 +69,11 @@ width:0;
 position:fixed;
 top:0;
 left:0;
-background:#ecfeff;
+background:#ecfdf5;
 overflow-x:hidden;
 transition:0.4s;
 padding-top:80px;
-box-shadow:2px 0 10px rgba(0,0,0,0.15);
+box-shadow:2px 0 10px rgba(0,0,0,0.2);
 }
 
 .sidebar a{
@@ -79,11 +81,11 @@ padding:12px 30px;
 display:block;
 font-size:18px;
 text-decoration:none;
-color:#0f766e;
+color:#065f46;
 }
 
 .sidebar a:hover{
-background:#cffafe;
+background:#d1fae5;
 }
 
 /* MAIN CONTENT */
@@ -94,17 +96,17 @@ max-width:1000px;
 transition:margin-left 0.4s;
 }
 
-/* PROFILE */
+/* PROFILE LAYOUT */
 
 .profile{
 display:flex;
 gap:50px;
 align-items:flex-start;
-flex-wrap:wrap;
+flex-wrap:nowrap;
 }
 
 .profile img{
-width:250px;
+width:260px;
 border-radius:10px;
 }
 
@@ -133,7 +135,7 @@ color:#374151;
 
 <!-- SIDEBAR -->
 
-<div id="sidebar" class="sidebar" onclick="toggleNav()">
+<div id="sidebar" class="sidebar">
 
 <a href="index.html">Home</a>
 <a href="publications.html">Publications</a>
@@ -171,7 +173,7 @@ color:#374151;
 
 </div>
 
-<!-- MAIN -->
+<!-- MAIN CONTENT -->
 
 <div id="main" class="main">
 
@@ -195,7 +197,8 @@ Shanghai Jiao Tong University
 <p>
 
 I work on high-energy astrophysics, blazar physics,
-multiwavelength SED modeling and gamma-ray data analysis.
+multiwavelength spectral energy distribution modeling,
+and gamma-ray data analysis.
 
 </p>
 
@@ -209,6 +212,8 @@ multiwavelength SED modeling and gamma-ray data analysis.
 
 <script>
 
+/* OPEN / CLOSE SIDEBAR */
+
 function toggleNav(){
 
 let sidebar=document.getElementById("sidebar");
@@ -219,8 +224,7 @@ if(sidebar.style.width==="260px"){
 sidebar.style.width="0";
 main.style.marginLeft="0";
 
-}
-else{
+}else{
 
 sidebar.style.width="260px";
 main.style.marginLeft="260px";
@@ -228,6 +232,24 @@ main.style.marginLeft="260px";
 }
 
 }
+
+/* CLOSE SIDEBAR IF CLICK OUTSIDE */
+
+document.addEventListener("click",function(event){
+
+let sidebar=document.getElementById("sidebar");
+let menu=document.querySelector(".menu-btn");
+
+if(sidebar.style.width==="260px" &&
+!sidebar.contains(event.target) &&
+!menu.contains(event.target)){
+
+sidebar.style.width="0";
+document.getElementById("main").style.marginLeft="0";
+
+}
+
+});
 
 </script>
 
