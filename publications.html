@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Publications</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:'Inter',sans-serif;
+max-width:900px;
+margin:60px auto;
+line-height:1.7;
+}
+
+h1{
+font-family:'Playfair Display',serif;
+}
+
+li{
+margin-bottom:12px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Publications</h1>
+
+<ul id="papers">
+Loading publications...
+</ul>
+
+<script>
+
+const inspireID="1991836";
+
+fetch(`https://inspirehep.net/api/literature?q=author.recid:${inspireID}&size=20`)
+.then(response=>response.json())
+.then(data=>{
+
+let papers=data.hits.hits;
+let html="";
+
+papers.forEach(paper=>{
+
+let title=paper.metadata.titles[0].title;
+
+let year=paper.metadata.publication_info
+?paper.metadata.publication_info[0].year:"";
+
+let link=paper.links.html;
+
+html+=`<li><a href="${link}" target="_blank">${title}</a> (${year})</li>`;
+
+});
+
+document.getElementById("papers").innerHTML=html;
+
+});
+
+</script>
+
+</body>
+</html>
