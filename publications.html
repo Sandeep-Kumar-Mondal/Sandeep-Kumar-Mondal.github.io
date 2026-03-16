@@ -1,10 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Publications | Sandeep Kumar Mondal</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:white;
+}
+
+/* HEADER */
+
+.header{
+background:linear-gradient(135deg,#134e4a,#22c55e);
+color:white;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.header h2{
+font-family:'Playfair Display',serif;
+margin:0;
+}
+
+/* ICONS */
+
+.icons a{
+color:white;
+margin-left:15px;
+font-size:22px;
+text-decoration:none;
+}
+
+.icons a:hover{
+opacity:0.8;
+}
+
+/* HAMBURGER */
+
+.menu-btn{
+font-size:28px;
+cursor:pointer;
+position:fixed;
+top:20px;
+left:20px;
+color:white;
+z-index:3;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+height:100%;
+width:0;
+position:fixed;
+top:0;
+left:0;
+background:#ecfdf5;
+overflow-x:hidden;
+transition:0.4s;
+padding-top:80px;
+box-shadow:2px 0 10px rgba(0,0,0,0.2);
+}
+
+.sidebar a{
+padding:12px 30px;
+display:block;
+font-size:18px;
+text-decoration:none;
+color:#065f46;
+}
+
+.sidebar a:hover{
+background:#d1fae5;
+}
+
+/* MAIN CONTENT */
+
+.main{
+padding:60px;
+max-width:1000px;
+margin:auto;
+transition:margin-left 0.4s;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<span class="menu-btn" onclick="toggleNav()">☰</span>
+
+<!-- SIDEBAR -->
+
+<div id="sidebar" class="sidebar">
+
+<a href="index.html">Home</a>
+<a href="publications.html">Publications</a>
+<a href="#">Research</a>
+<a href="#">CV</a>
+<a href="#">Talks</a>
+
+</div>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<h2>Sandeep Kumar Mondal</h2>
+
+<div class="icons">
+
+<a href="mailto:kumarsandeepmondal@gmail.com" target="_blank">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="https://scholar.google.com/citations?user=g9bjHIUAAAAJ&hl=en" target="_blank">
+<i class="fa-brands fa-google"></i>
+</a>
+
+<a href="https://inspirehep.net/authors/1991836" target="_blank">
+<i class="fa-solid fa-atom"></i>
+</a>
+
+<a href="https://orcid.org/0000-0003-2445-9935" target="_blank">
+<i class="fa-brands fa-orcid"></i>
+</a>
+
+</div>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
 <div id="main" class="main">
 
 <h1>Publications</h1>
-
-<p>List of publications here.</p>
-
-</div>
 
 <h2>Refereed Journal Publications</h2>
 
@@ -85,3 +228,31 @@ Proceedings of Science <b>790</b> (2023)
 </li>
 
 </ol>
+
+</div>
+
+<script>
+
+function toggleNav(){
+
+let sidebar=document.getElementById("sidebar");
+let main=document.getElementById("main");
+
+if(sidebar.style.width==="260px"){
+
+sidebar.style.width="0";
+main.style.marginLeft="0";
+
+}else{
+
+sidebar.style.width="260px";
+main.style.marginLeft="260px";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
