@@ -2,28 +2,81 @@
 <html>
 
 <head>
+
 <title>Sandeep Kumar Mondal</title>
 
 <style>
 
 body{
-font-family: Arial;
-max-width: 800px;
-margin: 40px auto;
-line-height: 1.6;
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+background:#f6f6f6;
 }
+
+.container{
+display:flex;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:260px;
+background:#eeeeee;
+padding:30px;
+height:100vh;
+}
+
+.sidebar h2{
+margin-top:0;
+}
+
+.sidebar a{
+display:block;
+padding:10px 0;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.sidebar a:hover{
+color:#e74c3c;
+}
+
+/* Main content */
+
+.main{
+flex:1;
+padding:50px;
+background:white;
+}
+
+.header{
+border-bottom:3px solid #e74c3c;
+padding-bottom:10px;
+margin-bottom:30px;
+}
+
+/* Profile layout */
+
+.profile{
+display:flex;
+align-items:flex-start;
+gap:40px;
+}
+
+.profile img{
+width:260px;
+border-radius:10px;
+}
+
+/* Text styling */
 
 h1{
-color:#2c3e50;
+margin-top:0;
 }
 
-a{
-color:#1a73e8;
-text-decoration:none;
-}
-
-img{
-border-radius:10px;
+.email{
+color:#e74c3c;
 }
 
 </style>
@@ -32,40 +85,76 @@ border-radius:10px;
 
 <body>
 
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>Menu</h2>
+
+<a href="#">Homepage</a>
+<a href="#">Research</a>
+<a href="#">Publications</a>
+<a href="#">CV</a>
+<a href="#">Talks</a>
+
+<br><br>
+
+<h3>Contact</h3>
+
+<p>
+Email:<br>
+<span class="email">kumarsandeepmondal@gmail.com</span>
+</p>
+
+</div>
+
+
+<!-- Main content -->
+
+<div class="main">
+
+<div class="header">
+
+<h2>Sandeep Kumar Mondal | Astrophysicist</h2>
+
+</div>
+
+
+<div class="profile">
+
+<div>
+
 <h1>Sandeep Kumar Mondal</h1>
 
-<img src="photo.jpg" width="180">
-
 <p>
-Astrophysicist working on high-energy astrophysics,
-blazars, and multiwavelength spectral energy distribution modeling.
+Department of Physics<br>
+Astrophysics Researcher
 </p>
-
-<h2>Research Interests</h2>
-
-<ul>
-<li>Blazar multiwavelength observations</li>
-<li>Spectral energy distribution (SED) modeling</li>
-<li>Fermi-LAT data analysis</li>
-<li>Neutrino emission from AGN</li>
-</ul>
-
-<h2>Publications</h2>
-
-<ul>
-<li>Paper title – Journal – Year</li>
-<li>Paper title – Journal – Year</li>
-</ul>
-
-<h2>Links</h2>
 
 <p>
 
-<a href="cv.pdf">Download CV</a><br>
+I am an astrophysicist studying high-energy phenomena in the universe,
+including blazars, gamma-ray emission, and multiwavelength spectral
+energy distribution modeling.
 
-<a href="https://github.com/Sandeep-Kumar-Mondal">GitHub</a>
+My research involves analysis of data from missions such as Fermi-LAT
+and Swift, along with theoretical modeling of relativistic jets and
+particle acceleration processes.
 
 </p>
+
+</div>
+
+
+<img src="photo.jpg">
+
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
