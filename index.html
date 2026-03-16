@@ -5,18 +5,141 @@
 
 <title>Sandeep Kumar Mondal</title>
 
-<link rel="stylesheet" href="style.css">
-
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:white;
+}
+
+/* HEADER */
+
+.header{
+background:linear-gradient(135deg,#134e4a,#22c55e);
+color:white;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.header h2{
+font-family:'Playfair Display',serif;
+margin:0;
+}
+
+/* ICONS */
+
+.icons a{
+color:white;
+margin-left:15px;
+font-size:22px;
+text-decoration:none;
+}
+
+.icons a:visited{
+color:white;
+}
+
+.icons a:hover{
+opacity:0.8;
+}
+
+/* HAMBURGER */
+
+.menu-btn{
+font-size:28px;
+cursor:pointer;
+position:fixed;
+top:20px;
+left:20px;
+color:white;
+z-index:3;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+height:100%;
+width:0;
+position:fixed;
+top:0;
+left:0;
+background:#ecfdf5;
+overflow-x:hidden;
+transition:0.4s;
+padding-top:80px;
+box-shadow:2px 0 10px rgba(0,0,0,0.2);
+}
+
+.sidebar a{
+padding:12px 30px;
+display:block;
+font-size:18px;
+text-decoration:none;
+color:#065f46;
+}
+
+.sidebar a:visited{
+color:#065f46;
+}
+
+.sidebar a:hover{
+background:#d1fae5;
+}
+
+/* MAIN CONTENT */
+
+.main{
+padding:60px;
+max-width:1000px;
+margin:auto;
+transition:margin-left 0.4s;
+}
+
+/* PROFILE */
+
+.profile{
+display:flex;
+gap:50px;
+align-items:flex-start;
+}
+
+.profile img{
+width:260px;
+border-radius:10px;
+}
+
+/* NAME */
+
+.name{
+font-family:'Playfair Display',serif;
+font-size:36px;
+margin-bottom:10px;
+}
+
+/* AFFILIATION */
+
+.affiliation{
+line-height:1.6;
+color:#374151;
+}
+
+</style>
 
 </head>
 
 <body>
 
 <span class="menu-btn" onclick="toggleNav()">☰</span>
+
+<!-- SIDEBAR -->
 
 <div id="sidebar" class="sidebar">
 
@@ -27,6 +150,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 <a href="#">Talks</a>
 
 </div>
+
+<!-- HEADER -->
 
 <div class="header">
 
@@ -53,6 +178,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 </div>
 
 </div>
+
+<!-- MAIN CONTENT -->
 
 <div id="main" class="main">
 
