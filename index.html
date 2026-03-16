@@ -5,23 +5,53 @@
 
 <title>Sandeep Kumar Mondal</title>
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#f5f5f5;
+background:#f6f6f6;
 }
 
-/* Hamburger button */
+/* HEADER */
+
+.header{
+background:linear-gradient(120deg,#1abc9c,#27ae60);
+color:white;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+/* ICONS */
+
+.icons a{
+color:white;
+margin-left:15px;
+font-size:22px;
+text-decoration:none;
+}
+
+.icons a:hover{
+color:#eafaf1;
+}
+
+/* HAMBURGER */
 
 .menu-btn{
 font-size:28px;
 cursor:pointer;
-padding:20px;
+position:fixed;
+top:20px;
+left:20px;
+color:#2c3e50;
 }
 
-/* Sidebar */
+/* SIDEBAR */
 
 .sidebar{
 height:100%;
@@ -29,12 +59,177 @@ width:0;
 position:fixed;
 top:0;
 left:0;
-background:#eeeeee;
+background:#ecf0f1;
 overflow-x:hidden;
 transition:0.4s;
 padding-top:60px;
+box-shadow:2px 0 10px rgba(0,0,0,0.2);
 }
 
+.sidebar a{
+padding:12px 30px;
+display:block;
+font-size:18px;
+text-decoration:none;
+color:#2c3e50;
+}
+
+.sidebar a:hover{
+background:#d5f5e3;
+}
+
+.sidebar .closebtn{
+position:absolute;
+top:10px;
+right:25px;
+font-size:35px;
+}
+
+/* MAIN CONTENT */
+
+.main{
+margin-left:80px;
+padding:50px;
+max-width:1000px;
+}
+
+/* PROFILE */
+
+.profile{
+display:flex;
+gap:40px;
+align-items:flex-start;
+}
+
+.profile img{
+width:260px;
+border-radius:10px;
+}
+
+/* EMAIL */
+
+.email a{
+color:#27ae60;
+text-decoration:none;
+}
+
+.email a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div id="mySidebar" class="sidebar">
+
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+<a href="#">Home</a>
+<a href="#">Research</a>
+<a href="#">Publications</a>
+<a href="#">CV</a>
+<a href="#">Talks</a>
+
+</div>
+
+<!-- Hamburger button -->
+
+<span class="menu-btn" onclick="openNav()">☰</span>
+
+
+<!-- Header -->
+
+<div class="header">
+
+<h2>Sandeep Kumar Mondal</h2>
+
+<div class="icons">
+
+<a href="mailto:kumarsandeepmondal@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="https://scholar.google.com/citations?user=g9bjHIUAAAAJ&hl=en">
+<i class="fa-brands fa-google"></i>
+</a>
+
+<a href="https://inspirehep.net/authors/1991836">
+<i class="fa-solid fa-atom"></i>
+</a>
+
+<a href="https://orcid.org/0000-0003-2445-9935">
+<i class="fa-brands fa-orcid"></i>
+</a>
+
+</div>
+
+</div>
+
+
+<!-- MAIN PAGE -->
+
+<div class="main">
+
+<div class="profile">
+
+<div>
+
+<h1>Sandeep Kumar Mondal</h1>
+
+<p>
+Postdoctoral Fellow<br>
+Particle Astrophysics Theory Group & TRIDENT Collaboration <br>
+Tsung-Dao Lee Insitute <br>
+Shanghai Jiao Tong University
+</p>
+
+<p class="email">
+Email:
+<a href="mailto:kumarsandeepmondal@gmail.com">
+kumarsandeepmondal@gmail.com
+</a>
+</p>
+
+<p>
+
+I am an astrophysicist working on high-energy astrophysics,
+blazars, gamma-ray emission and multiwavelength spectral
+energy distribution modeling.
+
+My research uses data from missions such as Fermi-LAT
+and Swift along with theoretical modeling of relativistic jets.
+
+</p>
+
+</div>
+
+
+<img src="photo.jpg">
+
+</div>
+
+</div>
+
+
+<script>
+
+function openNav(){
+document.getElementById("mySidebar").style.width="260px";
+}
+
+function closeNav(){
+document.getElementById("mySidebar").style.width="0";
+}
+
+</script>
+
+</body>
+</html>
 .sidebar a{
 padding:12px 30px;
 text-decoration:none;
