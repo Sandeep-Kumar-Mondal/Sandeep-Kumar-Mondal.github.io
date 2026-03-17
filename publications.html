@@ -95,6 +95,43 @@ margin:auto;
 transition:margin-left 0.4s;
 }
 
+  .sort-bar{
+margin-bottom:20px;
+}
+
+.sort-bar button{
+background:#10b981;
+color:white;
+border:none;
+padding:8px 14px;
+margin-right:10px;
+cursor:pointer;
+border-radius:6px;
+}
+
+.pub{
+margin-bottom:25px;
+padding-bottom:10px;
+border-bottom:1px solid #e5e7eb;
+}
+
+.title a{
+font-size:18px;
+font-weight:600;
+color:#064e3b;
+text-decoration:none;
+}
+
+.authors{
+margin-top:5px;
+color:#374151;
+}
+
+.journal{
+font-size:14px;
+color:#6b7280;
+}
+  
 </style>
 
 </head>
@@ -129,105 +166,173 @@ transition:margin-left 0.4s;
 
 <h1>Refereed Journal Publications</h1>
 
-<ol>
+<div class="sort-bar">
+<button onclick="sortByYear()">Sort by Year</button>
+<button onclick="sortByCitations()">Sort by Citations</button>
+</div>
 
-<li>
-<b>Sandeep Kumar Mondal</b>, Raj Prince, Nayantara Gupta, Avik Kumar Das<br>
-<i>Spectral Modeling of Flares in Long-term Gamma-Ray Light Curve of PKS 0903-57</i><br>
-<a href="https://iopscience.iop.org/article/10.3847/1538-4357/ac11fa" target="_blank">
-The Astrophysical Journal <b>922</b>, 160 (2021)
+<div id="pub-list">
+
+<div class="pub" data-year="2026" data-citations="0">
+<div class="title">
+<a href="https://doi.org/10.3847/1538-4357/ae1f0b" target="_blank">
+Explaining the Origin of TeV Gamma Rays from M87 During High and Low States
 </a>
-[<a href="https://arxiv.org/abs/2107.02702" target="_blank">arXiv:2107.02702</a>]
-</li>
+</div>
+<div class="authors">
+Nibedita Mondal, <b>Sandeep Kumar Mondal</b>, Nayantara Gupta
+</div>
+<div class="journal">
+The Astrophysical Journal, 997, 151 (2026)
+</div>
+</div>
 
-<li>
-<b>Sandeep Kumar Mondal</b>, Saikat Das, Nayantara Gupta<br>
-<i>Exploring the Emission Mechanisms of Mrk 180 with long term X-ray and gamma-ray data</i><br>
-<a href="https://iopscience.iop.org/article/10.3847/1538-4357/acc46b" target="_blank">
-The Astrophysical Journal <b>948</b>, 75 (2023)
+<div class="pub" data-year="2023" data-citations="7">
+<div class="title">
+<a href="https://doi.org/10.3847/1538-4357/acc46b" target="_blank">
+Exploring the Emission Mechanisms of Mrk 180 with long term X-ray and gamma-ray data
 </a>
-[<a href="https://arxiv.org/abs/2212.07331" target="_blank">arXiv:2212.07331</a>]
-</li>
+</div>
+<div class="authors">
+<b>Sandeep Kumar Mondal</b>, Saikat Das, Nayantara Gupta
+</div>
+<div class="journal">
+The Astrophysical Journal, 948, 75 (2023)
+</div>
+</div>
 
-<li>
-Avik Kumar Das, <b>Sandeep Kumar Mondal</b>, Raj Prince<br>
-<i>Gamma-ray flares and broadband spectral study of PKS 0402-362</i><br>
+<div class="pub" data-year="2023" data-citations="7">
+<div class="title">
 <a href="https://doi.org/10.1093/mnras/stad702" target="_blank">
+Gamma-ray flares and broadband spectral study of PKS 0402-362
+</a>
+</div>
+<div class="authors">
+Avik Kumar Das, <b>Sandeep Kumar Mondal</b>, Raj Prince
+</div>
+<div class="journal">
 Monthly Notices of the Royal Astronomical Society (2023)
+</div>
+</div>
+
+<div class="pub" data-year="2021" data-citations="8">
+<div class="title">
+<a href="https://doi.org/10.3847/1538-4357/ac11fa" target="_blank">
+Spectral Modeling of Flares in Long-term Gamma-Ray Light Curve of PKS 0903-57
 </a>
-[<a href="https://arxiv.org/abs/2303.03039" target="_blank">arXiv:2303.03039</a>]
-</li>
+</div>
+<div class="authors">
+<b>Sandeep Kumar Mondal</b>, Raj Prince, Nayantara Gupta, Avik Kumar Das
+</div>
+<div class="journal">
+The Astrophysical Journal, 922, 160 (2021)
+</div>
+</div>
 
-<li>
-Nibedita Mondal, <b>Sandeep Kumar Mondal</b>, Nayantara Gupta<br>
-<i>Explaining the Origin of TeV Gamma Rays from M87 During High and Low States</i><br>
-<a href="https://iopscience.iop.org/article/10.3847/1538-4357/ae1f0b" target="_blank">
-The Astrophysical Journal <b>997</b>, 151 (2026)
+<div class="pub" data-year="2025" data-citations="0">
+<div class="title">
+<a href="https://arxiv.org/abs/2511.21182" target="_blank">
+Broad-band temporal and spectral study of TeV blazar TXS 0518+211
 </a>
-[<a href="https://arxiv.org/abs/2509.21314" target="_blank">arXiv:2509.21314</a>]
-</li>
+</div>
+<div class="authors">
+Avik Kumar Das, Pankaj Kushwaha, Veeresh Singh, <b>Sandeep Kumar Mondal</b>, Goldy Ahuja, Deekshya R. Sarkar
+</div>
+<div class="journal">
+Monthly Notices of the Royal Astronomical Society (Accepted)
+</div>
+</div>
 
-<li>
-Avik Kumar Das, Pankaj Kushwaha, Veeresh Singh, <b>Sandeep Kumar Mondal</b>, Goldy Ahuja, Deekshya R. Sarkar<br>
-<i>Broad-band temporal and spectral study of TeV blazar TXS 0518+211</i><br>
-Monthly Notices of the Royal Astronomical Society (Accepted for Publication)<br>
-[<a href="https://arxiv.org/abs/2511.21182" target="_blank">arXiv:2511.21182</a>]
-</li>
-
-<li>
+<div class="pub" data-year="2025" data-citations="0">
+<div class="title">
+<a href="#" target="_blank">
+Detection of Quasi-Periodic Oscillation in the 37 GHz Radio Light Curve of the Blazar Ton 599 during 1990–2020
+</a>
+</div>
+<div class="authors">
 Alok C. Gupta, Alexandr E. Volvach, Shubham Kishore, Larisa N. Volvach,
-Paul J. Wiita, Lang Cui, Mauri J. Valtonen, <b>Sandeep K. Mondal</b>, Haritma Gaur<br>
-<i>Detection of Quasi-Periodic Oscillation in the 37 GHz Radio Light Curve of the Blazar Ton 599 during 1990–2020</i><br>
-Astronomy & Astrophysics (Accepted for Publication)
-</li>
+Paul J. Wiita, Lang Cui, Mauri J. Valtonen, <b>Sandeep K. Mondal</b>, Haritma Gaur
+</div>
+<div class="journal">
+Astronomy & Astrophysics (Accepted)
+</div>
+</div>
 
-</ol>
+</div>
+
 
 <h1>Conference Proceedings</h1>
 
-<ol>
+<div id="conf-list">
 
-<li>
-<b>Sandeep Kumar Mondal</b>, Saikat Das, Nayantara Gupta<br>
-<i>Unraveling the Emission Mechanism of the HBL Source Mrk 180 with Multi-Wavelength Data</i><br>
+<div class="pub" data-year="2023" data-citations="0">
+<div class="title">
 <a href="https://pos.sissa.it/444/942" target="_blank">
-Proceedings of Science <b>942</b> (2023)
+Unraveling the Emission Mechanism of the HBL Source Mrk 180 with Multi-Wavelength Data
 </a>
-[<a href="https://arxiv.org/abs/2308.16489" target="_blank">arXiv:2308.16489</a>]
-</li>
+</div>
+<div class="authors">
+<b>Sandeep Kumar Mondal</b>, Saikat Das, Nayantara Gupta
+</div>
+<div class="journal">
+Proceedings of Science, 942 (2023)
+</div>
+</div>
 
-<li>
-Avik Kumar Das, <b>Sandeep Kumar Mondal</b>, Raj Prince<br>
-<i>Multi-wavelength temporal and spectral study of PKS 0402-362</i><br>
+<div class="pub" data-year="2023" data-citations="0">
+<div class="title">
 <a href="https://pos.sissa.it/444/790" target="_blank">
-Proceedings of Science <b>790</b> (2023)
+Multi-wavelength temporal and spectral study of PKS 0402-362
 </a>
-[<a href="https://arxiv.org/abs/2308.13966" target="_blank">arXiv:2308.13966</a>]
-</li>
-
-</ol>
+</div>
+<div class="authors">
+Avik Kumar Das, <b>Sandeep Kumar Mondal</b>, Raj Prince
+</div>
+<div class="journal">
+Proceedings of Science, 790 (2023)
+</div>
+</div>
 
 </div>
+
+
+
+
+
 
 <script>
 
 function toggleNav(){
-
 let sidebar=document.getElementById("sidebar");
 let main=document.getElementById("main");
 
 if(sidebar.style.width==="260px"){
-
 sidebar.style.width="0";
 main.style.marginLeft="0";
-
 }else{
-
 sidebar.style.width="260px";
 main.style.marginLeft="260px";
-
+}
 }
 
+function sortByYear(){
+["pub-list","conf-list"].forEach(id=>{
+let container=document.getElementById(id);
+let pubs=[...container.getElementsByClassName("pub")];
+
+pubs.sort((a,b)=> b.dataset.year - a.dataset.year);
+pubs.forEach(p=>container.appendChild(p));
+});
+}
+
+function sortByCitations(){
+["pub-list","conf-list"].forEach(id=>{
+let container=document.getElementById(id);
+let pubs=[...container.getElementsByClassName("pub")];
+
+pubs.sort((a,b)=> b.dataset.citations - a.dataset.citations);
+pubs.forEach(p=>container.appendChild(p));
+});
 }
 
 </script>
