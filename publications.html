@@ -15,14 +15,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:#ffffff;
-overflow-x:hidden;
-}
-
-/* PAGE WRAPPER (IMPORTANT) */
-
-.page{
-transition:transform 0.4s ease;
+background:white;
 }
 
 /* HEADER */
@@ -64,17 +57,19 @@ text-decoration:none;
 .menu-btn{
 font-size:28px;
 cursor:pointer;
+color:white;
 }
 
 /* SIDEBAR */
 
 .sidebar{
 height:100%;
-width:260px;
+width:0;
 position:fixed;
 top:0;
-left:-260px;
+left:0;
 background:linear-gradient(180deg,#022c22,#065f46);
+overflow-x:hidden;
 transition:0.4s;
 padding-top:80px;
 z-index:3;
@@ -92,12 +87,24 @@ color:#d1fae5;
 background:#064e3b;
 }
 
-/* MAIN */
+/* CLOSE BUTTON */
+
+.close-btn{
+position:absolute;
+top:20px;
+right:20px;
+font-size:24px;
+color:white;
+cursor:pointer;
+}
+
+/* MAIN CONTENT */
 
 .main{
 padding:60px;
 max-width:1000px;
 margin:auto;
+transition:margin-left 0.4s;
 }
 
 /* TABLE */
@@ -112,6 +119,7 @@ font-size:14px;
 .pub-table th, .pub-table td{
 border-bottom:1px solid #e5e7eb;
 padding:12px;
+vertical-align:top;
 }
 
 .pub-table th{
@@ -151,50 +159,158 @@ color:#6b7280;
 <!-- SIDEBAR -->
 
 <div id="sidebar" class="sidebar">
+
+<span class="close-btn" onclick="closeNav()">&#8592;</span>
+
 <a href="index.html">Home</a>
 <a href="publications.html">Publications</a>
 <a href="#">Research</a>
 <a href="#">CV</a>
 <a href="#">Talks</a>
+
 </div>
-
-<!-- PAGE WRAPPER -->
-
-<div id="page" class="page">
 
 <!-- HEADER -->
 
 <div class="header">
 
 <div class="header-left">
-<span class="menu-btn" onclick="toggleNav()">☰</span>
+<span class="menu-btn" onclick="openNav()">☰</span>
 <h2>Publications</h2>
 </div>
 
 <div class="icons">
-<a href="mailto:kumarsandeepmondal@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-<a href="https://scholar.google.com"><i class="fa-brands fa-google"></i></a>
-<a href="https://inspirehep.net"><i class="fa-solid fa-atom"></i></a>
-<a href="https://orcid.org"><i class="fa-brands fa-orcid"></i></a>
+
+<a href="mailto:kumarsandeepmondal@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="https://scholar.google.com/citations?user=g9bjHIUAAAAJ&hl=en" target="_blank">
+<i class="fa-brands fa-google"></i>
+</a>
+
+<a href="https://inspirehep.net/authors/1991836" target="_blank">
+<i class="fa-solid fa-atom"></i>
+</a>
+
+<a href="https://orcid.org/0000-0003-2445-9935" target="_blank">
+<i class="fa-brands fa-orcid"></i>
+</a>
+
 </div>
 
 </div>
 
 <!-- MAIN -->
 
-<div class="main">
+<div id="main" class="main">
 
 <h1>Refereed Journal Publications</h1>
 
 <table class="pub-table">
 <tbody>
 
-<tr><td>1</td><td>Explaining the Origin of TeV Gamma Rays from M87</td><td>2026</td></tr>
-<tr><td>2</td><td>Detection of quasi-periodic oscillations in Ton 599</td><td>2025</td></tr>
-<tr><td>3</td><td>Broad-band temporal study of TXS 0518+211</td><td>2025</td></tr>
-<tr><td>4</td><td>Emission Mechanisms of Mrk 180</td><td>2023</td></tr>
-<tr><td>5</td><td>Gamma-ray flares of PKS 0402-362</td><td>2023</td></tr>
-<tr><td>6</td><td>Spectral Modeling of PKS 0903-57</td><td>2021</td></tr>
+<tr>
+<td>1</td>
+<td>
+<div class="title">
+<a href="https://doi.org/10.3847/1538-4357/ae1f0b" target="_blank">
+Explaining the Origin of TeV Gamma Rays from M87 During High and Low States
+</a>
+</div>
+<div class="authors">
+Nibedita Mondal, <b>Sandeep Kumar Mondal</b>, Nayantara Gupta
+</div>
+<div class="journal">
+The Astrophysical Journal, 997, 151 (2026)
+</div>
+</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>
+<div class="title">
+<a href="https://arxiv.org/abs/2603.06116" target="_blank">
+Detection of quasi-periodic oscillations in Ton 599
+</a>
+</div>
+<div class="authors">
+Alok C. Gupta et al., <b>Sandeep Kumar Mondal</b>
+</div>
+<div class="journal">
+Astronomy & Astrophysics (Accepted, 2025)
+</div>
+</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>
+<div class="title">
+<a href="https://arxiv.org/abs/2511.21182" target="_blank">
+Broad-band temporal and spectral study of TeV blazar TXS 0518+211
+</a>
+</div>
+<div class="authors">
+Avik Kumar Das et al., <b>Sandeep Kumar Mondal</b>
+</div>
+<div class="journal">
+MNRAS (2026)
+</div>
+</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>
+<div class="title">
+<a href="https://doi.org/10.3847/1538-4357/acc46b" target="_blank">
+Exploring the Emission Mechanisms of Mrk 180
+</a>
+</div>
+<div class="authors">
+<b>Sandeep Kumar Mondal</b>, Saikat Das, Nayantara Gupta
+</div>
+<div class="journal">
+The Astrophysical Journal, 948, 75 (2023)
+</div>
+</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>
+<div class="title">
+<a href="https://doi.org/10.1093/mnras/stad702" target="_blank">
+Gamma-ray flares of PKS 0402-362
+</a>
+</div>
+<div class="authors">
+Avik Kumar Das, <b>Sandeep Kumar Mondal</b>, Raj Prince
+</div>
+<div class="journal">
+MNRAS (2023)
+</div>
+</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>
+<div class="title">
+<a href="https://doi.org/10.3847/1538-4357/ac11fa" target="_blank">
+Spectral Modeling of PKS 0903-57
+</a>
+</div>
+<div class="authors">
+<b>Sandeep Kumar Mondal</b>, Raj Prince, Nayantara Gupta
+</div>
+<div class="journal">
+The Astrophysical Journal, 922, 160 (2021)
+</div>
+</td>
+</tr>
 
 </tbody>
 </table>
@@ -204,35 +320,55 @@ color:#6b7280;
 <table class="pub-table">
 <tbody>
 
-<tr><td>1</td><td>HBL Source Mrk 180</td><td>2023</td></tr>
-<tr><td>2</td><td>Multi-wavelength study of PKS 0402-362</td><td>2023</td></tr>
+<tr>
+<td>1</td>
+<td>
+<div class="title">
+<a href="https://pos.sissa.it/444/942" target="_blank">
+Unraveling the Emission Mechanism of Mrk 180
+</a>
+</div>
+<div class="authors">
+<b>Sandeep Kumar Mondal</b>, Saikat Das, Nayantara Gupta
+</div>
+<div class="journal">
+Proceedings of Science (2023)
+</div>
+</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>
+<div class="title">
+<a href="https://pos.sissa.it/444/790" target="_blank">
+Multi-wavelength study of PKS 0402-362
+</a>
+</div>
+<div class="authors">
+Avik Kumar Das, <b>Sandeep Kumar Mondal</b>
+</div>
+<div class="journal">
+Proceedings of Science (2023)
+</div>
+</td>
+</tr>
 
 </tbody>
 </table>
 
 </div>
 
-</div>
-
 <script>
 
-let open=false;
-
-function toggleNav(){
-
-let sidebar=document.getElementById("sidebar");
-let page=document.getElementById("page");
-
-if(!open){
-sidebar.style.left="0";
-page.style.transform="translateX(260px)";
-open=true;
-}else{
-sidebar.style.left="-260px";
-page.style.transform="translateX(0)";
-open=false;
+function openNav(){
+document.getElementById("sidebar").style.width="260px";
+document.getElementById("main").style.marginLeft="260px";
 }
 
+function closeNav(){
+document.getElementById("sidebar").style.width="0";
+document.getElementById("main").style.marginLeft="0";
 }
 
 </script>
