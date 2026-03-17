@@ -214,22 +214,15 @@ cursor:pointer;
 
 <h1>Refereed Journal Publications</h1>
 
-<thead>
-<tr>
-<th>#</th>
-<th>Publication</th>
-<th onclick="sortByYear()" style="cursor:pointer;">Year ⬍</th>
-<th onclick="sortByCitations()" style="cursor:pointer;">Citations ⬍</th>
-</tr>
-</thead>
+
 
 <table class="pub-table" id="pub-table">
 <thead>
 <tr>
 <th>#</th>
 <th>Publication</th>
-<th>Year</th>
-<th>Citations</th>
+<th onclick="sortByYear()">Year ⇅</th>
+<th onclick="sortByCitations()">Citations ⇅</th>
 </tr>
 </thead>
 
@@ -245,7 +238,7 @@ Nibedita Mondal, <b>Sandeep Kumar Mondal</b>, Nayantara Gupta<br>
 <i>The Astrophysical Journal, 997, 151</i>
 </td>
 <td>2026</td>
-<td></td>
+<td class="cite">0</td>
 </tr>
 
 <tr data-year="2023" data-citations="7">
@@ -258,7 +251,7 @@ Exploring the Emission Mechanisms of Mrk 180 with long term X-ray and gamma-ray 
 <i>The Astrophysical Journal, 948, 75</i>
 </td>
 <td>2023</td>
-<td></td>
+<td class="cite">7</td>
 </tr>
 
 <tr data-year="2023" data-citations="7">
@@ -272,7 +265,7 @@ Avik Kumar Das, <b>Sandeep Kumar Mondal</b>, Raj Prince<br>
 
 </td>
 <td>2023</td>
-<td></td>
+<td class="cite"7</td>
 </tr>
 
 <tr data-year="2021" data-citations="8">
@@ -285,7 +278,7 @@ Spectral Modeling of Flares in Long-term Gamma-Ray Light Curve of PKS 0903-57
 <i>The Astrophysical Journal, 922, 160</i>
 </td>
 <td>2021</td>
-<td></td>
+<td class="cite">8</td>
 </tr>
 
 <tr data-year="2025" data-citations="0">
@@ -300,7 +293,7 @@ Avik Kumar Das, Pankaj Kushwaha, Veeresh Singh,  <b>Sandeep Kumar Mondal</b>, Go
 
 </td>
 <td>2025</td>
-<td></td>
+<td class="cite">0</td>
 </tr>
 
 <tr data-year="2025" data-citations="0">
@@ -314,7 +307,7 @@ Alok C. Gupta, Alexandr E. Volvach, Shubham Kishore, Larisa N. Volvach, Paul J. 
 
 </td>
 <td>2025</td>
-<td></td>
+<td class="cite">0</td>
 </tr>
 
 </tbody>
@@ -328,8 +321,8 @@ Alok C. Gupta, Alexandr E. Volvach, Shubham Kishore, Larisa N. Volvach, Paul J. 
 <tr>
 <th>#</th>
 <th>Publication</th>
-<th>Year</th>
-<th>Citations</th>
+<th onclick="sortByYear()">Year ⇅</th>
+<th onclick="sortByCitations()">Citations ⇅</th>
 </tr>
 </thead>
 
@@ -345,7 +338,7 @@ Unraveling the Emission Mechanism of the HBL Source Mrk 180 with Multi-Wavelengt
 <i>Proceedings of Science, 942 (2023)</i>
 </td>
 <td>2023</td>
-<td></td>
+<td class="cite">0</td>
 </tr>
 
 <tr data-year="2023" data-citations="0">
@@ -358,7 +351,7 @@ Avik Kumar Das, <b>Sandeep Kumar Mondal</b>, Raj Prince<br>
 <i>Proceedings of Science, 790 (2023)</i>
 </td>
 <td>2023</td>
-<td></td>
+<td class="cite">0</td>
 </tr>
 
 </tbody>
@@ -384,14 +377,16 @@ main.style.marginLeft="260px";
 }
 }
 
-let yearDesc = true;
-let citeDesc = true;
+
+function getAllRows(){
+let pubRows = [...document.querySelectorAll("#pub-table tbody tr")];
+let confRows = [...document.querySelectorAll("#conf-table tbody tr")];
+return pubRows.concat(confRows);
+}
 
 function sortByYear(){
 
-["pub-table","conf-table"].forEach(id=>{
-let table=document.getElementById(id).getElementsByTagName("tbody")[0];
-let rows=[...table.rows];
+let rows = getAllRows();
 
 rows.sort((a,b)=>{
 return yearDesc 
@@ -399,18 +394,13 @@ return yearDesc
 : a.dataset.year - b.dataset.year;
 });
 
-rows.forEach(row=>table.appendChild(row));
-});
-
+rebuildTables(rows);
 yearDesc = !yearDesc;
-updateSerialNumbers();
 }
 
 function sortByCitations(){
 
-["pub-table","conf-table"].forEach(id=>{
-let table=document.getElementById(id).getElementsByTagName("tbody")[0];
-let rows=[...table.rows];
+let rows = getAllRows();
 
 rows.sort((a,b)=>{
 return citeDesc 
@@ -418,11 +408,8 @@ return citeDesc
 : a.dataset.citations - b.dataset.citations;
 });
 
-rows.forEach(row=>table.appendChild(row));
-});
-
+rebuildTables(rows);
 citeDesc = !citeDesc;
-updateSerialNumbers();
 }
 
 function updateSerialNumbers(){
@@ -435,6 +422,37 @@ row.cells[0].innerText=index+1;
 });
 
 }
+
+
+function rebuildTables(rows){
+
+let pubBody = document.querySelector("#pub-table tbody");
+let confBody = document.querySelector("#conf-table tbody");
+
+pubBody.innerHTML = "";
+confBody.innerHTML = "";
+
+rows.forEach(row=>{
+if(row.closest("#pub-table")){
+pubBody.appendChild(row);
+}else{
+confBody.appendChild(row);
+}
+});
+
+updateSerialNumbers();
+}  
+function hideZeroCitations(){
+document.querySelectorAll(".cite").forEach(td=>{
+if(td.innerText.trim() === "0"){
+td.innerText = "";
+}
+});
+}
+
+// run once on page load
+hideZeroCitations();
+  
 </script>
 
 </body>
