@@ -71,7 +71,7 @@ width:0;
 position:fixed;
 top:0;
 left:0;
-background:#ecfdf5;
+background:linear-gradient(180deg,#022c22,#065f46);
 overflow-x:hidden;
 transition:0.4s;
 padding-top:80px;
@@ -138,11 +138,12 @@ color:#374151;
 
 <body>
 
-<span class="menu-btn" onclick="toggleNav()">☰</span>
-
+<span class="close-btn" onclick="toggleNav()">&#8592;</span>
 <!-- SIDEBAR -->
 
 <div id="sidebar" class="sidebar">
+
+<span class="close-btn" onclick="toggleNav()">&#8592;</span>
 
 <a href="index.html">Home</a>
 <a href="publications.html">Publications</a>
@@ -151,7 +152,6 @@ color:#374151;
 <a href="#talks.html">Talks</a>
 
 </div>
-
 <!-- HEADER -->
 
 <div class="header">
