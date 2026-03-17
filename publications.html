@@ -77,6 +77,7 @@ overflow-x:hidden;
 transition:0.4s;
 padding-top:80px;
 box-shadow:2px 0 10px rgba(0,0,0,0.2);
+z-index:3;
 }
 
 .sidebar a{
@@ -97,7 +98,7 @@ background:#d1fae5;
 padding:60px;
 max-width:1000px;
 margin:auto;
-transition:margin-left 0.4s;
+transition:transform 0.4s ease;
 }
 
 /* TABLE */
@@ -325,63 +326,6 @@ The Astrophysical Journal, 922, 160
 </tbody>
 </table>
 
-<h1>Conference Proceedings</h1>
-
-<table class="pub-table" id="conf-table">
-
-<thead>
-<tr>
-<th>#</th>
-<th>Publication</th>
-<th onclick="sortTable('conf-table','year')">Year</th>
-<th onclick="sortTable('conf-table','cite')">Citations</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr data-year="2023" data-cite="0">
-<td>1</td>
-<td>
-<div class="title">
-<a href="https://pos.sissa.it/444/942" target="_blank">
-Unraveling the Emission Mechanism of the HBL Source Mrk 180
-</a>
-</div>
-<div class="authors">
-<b>Sandeep Kumar Mondal</b>, Saikat Das, Nayantara Gupta
-</div>
-<div class="journal">
-Proceedings of Science (2023)
-</div>
-</td>
-<td>2023</td>
-<td>0</td>
-</tr>
-
-<tr data-year="2023" data-cite="0">
-<td>2</td>
-<td>
-<div class="title">
-<a href="https://pos.sissa.it/444/790" target="_blank">
-Multi-wavelength study of PKS 0402-362
-</a>
-</div>
-<div class="authors">
-Avik Kumar Das, <b>Sandeep Kumar Mondal</b>
-</div>
-<div class="journal">
-Proceedings of Science (2023)
-</div>
-</td>
-<td>2023</td>
-<td>0</td>
-</tr>
-
-</tbody>
-
-</table>
-
 </div>
 
 <script>
@@ -392,11 +336,15 @@ let sidebar=document.getElementById("sidebar");
 let main=document.getElementById("main");
 
 if(sidebar.style.width==="260px"){
+
 sidebar.style.width="0";
-main.style.marginLeft="0";
+main.style.transform="translateX(0)";
+
 }else{
+
 sidebar.style.width="260px";
-main.style.marginLeft="260px";
+main.style.transform="translateX(130px)";
+
 }
 
 }
@@ -405,46 +353,18 @@ document.addEventListener("click",function(event){
 
 let sidebar=document.getElementById("sidebar");
 let menu=document.querySelector(".menu-btn");
+let main=document.getElementById("main");
 
 if(sidebar.style.width==="260px" &&
 !sidebar.contains(event.target) &&
 !menu.contains(event.target)){
 
 sidebar.style.width="0";
-document.getElementById("main").style.marginLeft="0";
+main.style.transform="translateX(0)";
 
 }
 
 });
-
-let sortState = {};
-
-function sortTable(tableId, type){
-
-let table = document.getElementById(tableId);
-let tbody = table.querySelector("tbody");
-let rows = Array.from(tbody.querySelectorAll("tr"));
-
-let key = tableId + type;
-let asc = sortState[key] = !sortState[key];
-
-rows.sort((a,b)=>{
-
-let valA = type==="year" ? +a.dataset.year : +a.dataset.cite;
-let valB = type==="year" ? +b.dataset.year : +b.dataset.cite;
-
-return asc ? valA - valB : valB - valA;
-
-});
-
-tbody.innerHTML="";
-
-rows.forEach((row,i)=>{
-row.cells[0].innerText=i+1;
-tbody.appendChild(row);
-});
-
-}
 
 </script>
 
