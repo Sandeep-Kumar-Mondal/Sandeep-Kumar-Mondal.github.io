@@ -10,14 +10,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
 
 <style>
-
 body{
 margin:0;
 font-family:'Inter',sans-serif;
 background:white;
 }
 
-/* HEADER */
 .header{
 background:linear-gradient(135deg,#134e4a,#22c55e);
 color:white;
@@ -26,12 +24,6 @@ display:flex;
 align-items:center;
 }
 
-.header h2{
-font-family:'Playfair Display',serif;
-margin:0;
-}
-
-/* SIDEBAR */
 .menu-btn{
 font-size:28px;
 cursor:pointer;
@@ -49,7 +41,6 @@ position:fixed;
 top:0;
 left:0;
 background:#ecfdf5;
-overflow-x:hidden;
 transition:0.4s;
 padding-top:80px;
 }
@@ -66,15 +57,12 @@ color:#065f46;
 background:#d1fae5;
 }
 
-/* MAIN */
 .main{
 padding:60px;
 max-width:1000px;
 margin:auto;
-transition:margin-left 0.4s;
 }
 
-/* TABLE */
 .pub-table{
 width:100%;
 border-collapse:collapse;
@@ -115,7 +103,6 @@ color:#374151;
 font-size:13px;
 color:#6b7280;
 }
-
 </style>
 </head>
 
@@ -135,7 +122,7 @@ color:#6b7280;
 <h2>Publications</h2>
 </div>
 
-<div id="main" class="main">
+<div class="main">
 
 <h1>Refereed Journal Publications</h1>
 
@@ -227,6 +214,99 @@ The Astrophysical Journal, 922, 160
 <td>8</td>
 </tr>
 
+<tr data-year="2025" data-cite="0">
+<td>5</td>
+<td>
+<div class="title">
+<a href="https://arxiv.org/abs/2511.21182" target="_blank">
+Broad-band temporal and spectral study of TeV blazar TXS 0518+211
+</a>
+</div>
+<div class="authors">
+Avik Kumar Das et al., <b>Sandeep Kumar Mondal</b>
+</div>
+<div class="journal">
+MNRAS (2026)
+</div>
+</td>
+<td>2025</td>
+<td>0</td>
+</tr>
+
+<tr data-year="2025" data-cite="0">
+<td>6</td>
+<td>
+<div class="title">
+<a href="https://arxiv.org/abs/2603.06116" target="_blank">
+Detection of quasi-periodic oscillations in Ton 599
+</a>
+</div>
+<div class="authors">
+Alok C. Gupta et al., <b>Sandeep Kumar Mondal</b>
+</div>
+<div class="journal">
+Astronomy & Astrophysics (Accepted)
+</div>
+</td>
+<td>2025</td>
+<td>0</td>
+</tr>
+
+</tbody>
+</table>
+
+<h1>Conference Proceedings</h1>
+
+<table class="pub-table" id="conf-table">
+<thead>
+<tr>
+<th>#</th>
+<th>Publication</th>
+<th onclick="sortTable('conf-table','year')">Year</th>
+<th onclick="sortTable('conf-table','cite')">Citations</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr data-year="2023" data-cite="0">
+<td>1</td>
+<td>
+<div class="title">
+<a href="https://pos.sissa.it/444/942" target="_blank">
+Unraveling the Emission Mechanism of the HBL Source Mrk 180
+</a>
+</div>
+<div class="authors">
+<b>Sandeep Kumar Mondal</b>, Saikat Das, Nayantara Gupta
+</div>
+<div class="journal">
+Proceedings of Science (2023)
+</div>
+</td>
+<td>2023</td>
+<td>0</td>
+</tr>
+
+<tr data-year="2023" data-cite="0">
+<td>2</td>
+<td>
+<div class="title">
+<a href="https://pos.sissa.it/444/790" target="_blank">
+Multi-wavelength study of PKS 0402-362
+</a>
+</div>
+<div class="authors">
+Avik Kumar Das, <b>Sandeep Kumar Mondal</b>
+</div>
+<div class="journal">
+Proceedings of Science (2023)
+</div>
+</td>
+<td>2023</td>
+<td>0</td>
+</tr>
+
 </tbody>
 </table>
 
@@ -234,21 +314,11 @@ The Astrophysical Journal, 922, 160
 
 <script>
 
-/* Sidebar */
 function toggleNav(){
 let sidebar=document.getElementById("sidebar");
-let main=document.getElementById("main");
-
-if(sidebar.style.width==="260px"){
-sidebar.style.width="0";
-main.style.marginLeft="0";
-}else{
-sidebar.style.width="260px";
-main.style.marginLeft="260px";
-}
+sidebar.style.width = sidebar.style.width==="260px" ? "0" : "260px";
 }
 
-/* Sorting */
 let sortState = {};
 
 function sortTable(tableId, type){
@@ -257,19 +327,18 @@ let table = document.getElementById(tableId);
 let tbody = table.querySelector("tbody");
 let rows = Array.from(tbody.querySelectorAll("tr"));
 
-let key = tableId + "-" + type;
+let key = tableId + type;
 let asc = sortState[key] = !sortState[key];
 
 rows.sort((a,b)=>{
 let valA = type==="year" ? +a.dataset.year : +a.dataset.cite;
 let valB = type==="year" ? +b.dataset.year : +b.dataset.cite;
-
 return asc ? valA - valB : valB - valA;
 });
 
-tbody.innerHTML = "";
+tbody.innerHTML="";
 rows.forEach((row,i)=>{
-row.cells[0].innerText = i+1;
+row.cells[0].innerText=i+1;
 tbody.appendChild(row);
 });
 
