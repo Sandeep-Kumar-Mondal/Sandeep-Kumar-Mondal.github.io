@@ -15,7 +15,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:white;
 }
 
 /* HEADER */
@@ -38,26 +37,15 @@ align-items:center;
 gap:20px;
 }
 
-.header h2{
-font-family:'Playfair Display',serif;
-margin:0;
+.menu-btn{
+font-size:26px;
+cursor:pointer;
 }
-
-/* ICONS */
 
 .icons a{
 color:white;
 margin-left:15px;
 font-size:22px;
-text-decoration:none;
-}
-
-/* MENU */
-
-.menu-btn{
-font-size:28px;
-cursor:pointer;
-color:white;
 }
 
 /* SIDEBAR */
@@ -69,18 +57,17 @@ position:fixed;
 top:0;
 left:0;
 background:linear-gradient(180deg,#022c22,#065f46);
-overflow-x:hidden;
 transition:0.4s;
 padding-top:80px;
 z-index:3;
+overflow-x:hidden;
 }
 
 .sidebar a{
-padding:12px 30px;
 display:block;
-font-size:18px;
-text-decoration:none;
+padding:12px 30px;
 color:#d1fae5;
+text-decoration:none;
 }
 
 .sidebar a:hover{
@@ -93,12 +80,12 @@ background:#064e3b;
 position:absolute;
 top:20px;
 right:20px;
-font-size:24px;
-color:white;
+font-size:22px;
 cursor:pointer;
+color:white;
 }
 
-/* MAIN CONTENT */
+/* MAIN */
 
 .main{
 padding:60px;
@@ -109,45 +96,41 @@ transition:margin-left 0.4s;
 
 /* TABLE */
 
-.pub-table{
+table{
 width:100%;
 border-collapse:collapse;
-margin-top:20px;
-font-size:14px;
 }
 
-.pub-table th, .pub-table td{
-border-bottom:1px solid #e5e7eb;
+th, td{
 padding:12px;
+border-bottom:1px solid #e5e7eb;
 vertical-align:top;
 }
 
-.pub-table th{
+th{
+cursor:pointer;
 background:#ecfdf5;
 color:#065f46;
-cursor:pointer;
-text-align:left;
 }
 
-.pub-table tbody tr:hover{
+tr:hover{
 background:#f0fdf4;
 }
 
-.title a{
-font-size:16px;
+.title{
 font-weight:600;
+font-size:16px;
 color:#064e3b;
-text-decoration:none;
 }
 
 .authors{
-margin-top:4px;
 color:#374151;
+margin-top:4px;
 }
 
 .journal{
-font-size:13px;
 color:#6b7280;
+font-size:13px;
 }
 
 </style>
@@ -160,13 +143,12 @@ color:#6b7280;
 
 <div id="sidebar" class="sidebar">
 
-<span class="close-btn" onclick="closeNav()">&#8592;</span>
+<span class="close-btn" onclick="toggleNav()">&#8592;</span>
 
 <a href="index.html">Home</a>
 <a href="publications.html">Publications</a>
 <a href="#">Research</a>
 <a href="#">CV</a>
-<a href="#">Talks</a>
 
 </div>
 
@@ -175,7 +157,7 @@ color:#6b7280;
 <div class="header">
 
 <div class="header-left">
-<span class="menu-btn" onclick="openNav()">☰</span>
+<span class="menu-btn" onclick="toggleNav()">☰</span>
 <h2>Publications</h2>
 </div>
 
@@ -185,15 +167,15 @@ color:#6b7280;
 <i class="fa-solid fa-envelope"></i>
 </a>
 
-<a href="https://scholar.google.com/citations?user=g9bjHIUAAAAJ&hl=en" target="_blank">
+<a href="https://scholar.google.com/citations?user=g9bjHIUAAAAJ">
 <i class="fa-brands fa-google"></i>
 </a>
 
-<a href="https://inspirehep.net/authors/1991836" target="_blank">
+<a href="https://inspirehep.net/authors/1991836">
 <i class="fa-solid fa-atom"></i>
 </a>
 
-<a href="https://orcid.org/0000-0003-2445-9935" target="_blank">
+<a href="https://orcid.org/0000-0003-2445-9935">
 <i class="fa-brands fa-orcid"></i>
 </a>
 
@@ -205,170 +187,135 @@ color:#6b7280;
 
 <div id="main" class="main">
 
-<h1>Refereed Journal Publications</h1>
+<h1>Publications</h1>
 
-<table class="pub-table">
+<table id="pubTable">
+
+<thead>
+<tr>
+<th onclick="sortTable(0)">Year</th>
+<th>Details</th>
+<th onclick="sortTable(2)">Citations</th>
+</tr>
+</thead>
+
 <tbody>
 
 <tr>
-<td>1</td>
+<td>2026</td>
 <td>
-<div class="title">
-<a href="https://doi.org/10.3847/1538-4357/ae1f0b" target="_blank">
-Explaining the Origin of TeV Gamma Rays from M87 During High and Low States
-</a>
-</div>
-<div class="authors">
-Nibedita Mondal, <b>Sandeep Kumar Mondal</b>, Nayantara Gupta
-</div>
-<div class="journal">
-The Astrophysical Journal, 997, 151 (2026)
-</div>
+<div class="title">Explaining the Origin of TeV Gamma Rays from M87</div>
+<div class="authors">Nibedita Mondal, <b>Sandeep Kumar Mondal</b></div>
+<div class="journal">ApJ, 997, 151</div>
 </td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>
-<div class="title">
-<a href="https://arxiv.org/abs/2603.06116" target="_blank">
-Detection of quasi-periodic oscillations in Ton 599
-</a>
-</div>
-<div class="authors">
-Alok C. Gupta et al., <b>Sandeep Kumar Mondal</b>
-</div>
-<div class="journal">
-Astronomy & Astrophysics (Accepted, 2025)
-</div>
-</td>
-</tr>
-
-<tr>
-<td>3</td>
-<td>
-<div class="title">
-<a href="https://arxiv.org/abs/2511.21182" target="_blank">
-Broad-band temporal and spectral study of TeV blazar TXS 0518+211
-</a>
-</div>
-<div class="authors">
-Avik Kumar Das et al., <b>Sandeep Kumar Mondal</b>
-</div>
-<div class="journal">
-MNRAS (2026)
-</div>
-</td>
-</tr>
-
-<tr>
-<td>4</td>
-<td>
-<div class="title">
-<a href="https://doi.org/10.3847/1538-4357/acc46b" target="_blank">
-Exploring the Emission Mechanisms of Mrk 180
-</a>
-</div>
-<div class="authors">
-<b>Sandeep Kumar Mondal</b>, Saikat Das, Nayantara Gupta
-</div>
-<div class="journal">
-The Astrophysical Journal, 948, 75 (2023)
-</div>
-</td>
-</tr>
-
-<tr>
 <td>5</td>
-<td>
-<div class="title">
-<a href="https://doi.org/10.1093/mnras/stad702" target="_blank">
-Gamma-ray flares of PKS 0402-362
-</a>
-</div>
-<div class="authors">
-Avik Kumar Das, <b>Sandeep Kumar Mondal</b>, Raj Prince
-</div>
-<div class="journal">
-MNRAS (2023)
-</div>
-</td>
 </tr>
 
 <tr>
-<td>6</td>
+<td>2025</td>
 <td>
-<div class="title">
-<a href="https://doi.org/10.3847/1538-4357/ac11fa" target="_blank">
-Spectral Modeling of PKS 0903-57
-</a>
-</div>
-<div class="authors">
-<b>Sandeep Kumar Mondal</b>, Raj Prince, Nayantara Gupta
-</div>
-<div class="journal">
-The Astrophysical Journal, 922, 160 (2021)
-</div>
+<div class="title">QPOs in Ton 599</div>
+<div class="authors">A. Gupta et al., <b>Sandeep Kumar Mondal</b></div>
+<div class="journal">A&A (Accepted)</div>
 </td>
-</tr>
-
-</tbody>
-</table>
-
-<h1>Conference Proceedings</h1>
-
-<table class="pub-table">
-<tbody>
-
-<tr>
-<td>1</td>
-<td>
-<div class="title">
-<a href="https://pos.sissa.it/444/942" target="_blank">
-Unraveling the Emission Mechanism of Mrk 180
-</a>
-</div>
-<div class="authors">
-<b>Sandeep Kumar Mondal</b>, Saikat Das, Nayantara Gupta
-</div>
-<div class="journal">
-Proceedings of Science (2023)
-</div>
-</td>
+<td>3</td>
 </tr>
 
 <tr>
+<td>2023</td>
+<td>
+<div class="title">Mrk 180 Emission Mechanism</div>
+<div class="authors"><b>Sandeep Kumar Mondal</b></div>
+<div class="journal">ApJ, 948</div>
+</td>
+<td>12</td>
+</tr>
+
+<tr>
+<td>2023</td>
+<td>
+<div class="title">PKS 0402-362 Flares</div>
+<div class="authors">A. Das, <b>Sandeep Kumar Mondal</b></div>
+<div class="journal">MNRAS</div>
+</td>
+<td>9</td>
+</tr>
+
+<tr>
+<td>2021</td>
+<td>
+<div class="title">PKS 0903-57 Modeling</div>
+<div class="authors"><b>Sandeep Kumar Mondal</b></div>
+<div class="journal">ApJ, 922</div>
+</td>
+<td>15</td>
+</tr>
+
+<!-- CONFERENCE -->
+
+<tr>
+<td>2023</td>
+<td>
+<div class="title">Conference: Mrk 180 Study</div>
+<div class="authors"><b>Sandeep Kumar Mondal</b></div>
+<div class="journal">PoS</div>
+</td>
 <td>2</td>
-<td>
-<div class="title">
-<a href="https://pos.sissa.it/444/790" target="_blank">
-Multi-wavelength study of PKS 0402-362
-</a>
-</div>
-<div class="authors">
-Avik Kumar Das, <b>Sandeep Kumar Mondal</b>
-</div>
-<div class="journal">
-Proceedings of Science (2023)
-</div>
-</td>
 </tr>
 
 </tbody>
+
 </table>
 
 </div>
 
 <script>
 
-function openNav(){
-document.getElementById("sidebar").style.width="260px";
-document.getElementById("main").style.marginLeft="260px";
+let isOpen=false;
+
+function toggleNav(){
+
+let sidebar=document.getElementById("sidebar");
+let main=document.getElementById("main");
+
+if(!isOpen){
+
+sidebar.style.width="260px";
+main.style.marginLeft="260px";
+
+isOpen=true;
+
+}else{
+
+sidebar.style.width="0";
+
+/* IMPORTANT: do NOT reset margin */
+
+isOpen=false;
+
 }
 
-function closeNav(){
-document.getElementById("sidebar").style.width="0";
-document.getElementById("main").style.marginLeft="0";
+}
+
+/* SORTING */
+
+function sortTable(n){
+
+let table=document.getElementById("pubTable");
+let rows=Array.from(table.rows).slice(1);
+let asc=true;
+
+rows.sort((a,b)=>{
+
+let x=a.cells[n].innerText;
+let y=b.cells[n].innerText;
+
+return asc ? y-x : x-y;
+
+});
+
+rows.forEach(row=>table.appendChild(row));
+
 }
 
 </script>
