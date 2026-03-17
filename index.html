@@ -5,9 +5,6 @@
 
 <title>Sandeep Kumar Mondal</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
 
 <style>
@@ -27,40 +24,33 @@ padding:20px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+position:sticky;
+top:0;
+z-index:2;
 }
 
-.header h2{
-font-family:'Playfair Display',serif;
-margin:0;
+.header-left{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.menu-btn{
+font-size:26px;
+cursor:pointer;
+color:white;
 }
 
 /* ICONS */
 
-.icons a{
-color:white;
+.icons{
+display:flex;
+align-items:center;
+}
+
+.icon-img{
+height:22px;
 margin-left:15px;
-font-size:22px;
-text-decoration:none;
-}
-
-.icons a:visited{
-color:white;
-}
-
-.icons a:hover{
-opacity:0.8;
-}
-
-/* HAMBURGER */
-
-.menu-btn{
-font-size:28px;
-cursor:pointer;
-position:fixed;
-top:20px;
-left:20px;
-color:white;
-z-index:3;
 }
 
 /* SIDEBAR */
@@ -72,26 +62,32 @@ position:fixed;
 top:0;
 left:0;
 background:linear-gradient(180deg,#022c22,#065f46);
+overflow-x:hidden;
 transition:0.4s;
 padding-top:80px;
 z-index:3;
-overflow-x:hidden;   
 }
 
 .sidebar a{
-padding:12px 30px;
 display:block;
-font-size:18px;
+padding:12px 30px;
+color:#d1fae5;
 text-decoration:none;
-color:#065f46;
-}
-
-.sidebar a:visited{
-color:#065f46;
 }
 
 .sidebar a:hover{
-background:#d1fae5;
+background:#064e3b;
+}
+
+/* CLOSE BUTTON */
+
+.close-btn{
+position:absolute;
+top:20px;
+right:20px;
+font-size:22px;
+cursor:pointer;
+color:white;
 }
 
 /* MAIN CONTENT */
@@ -100,8 +96,7 @@ background:#d1fae5;
 padding:60px;
 max-width:1000px;
 margin:auto;
-margin-left:260px;
-transition:margin-left 0.4s;
+margin-left:260px;   /* FIXED */
 }
 
 /* PROFILE */
@@ -138,7 +133,6 @@ color:#374151;
 
 <body>
 
-<span class="close-btn" onclick="toggleNav()">&#8592;</span>
 <!-- SIDEBAR -->
 
 <div id="sidebar" class="sidebar">
@@ -149,31 +143,31 @@ color:#374151;
 <a href="publications.html">Publications</a>
 <a href="#">Research</a>
 <a href="#">CV</a>
-<a href="#talks.html">Talks</a>
+<a href="#">Talks</a>
 
 </div>
+
 <!-- HEADER -->
 
 <div class="header">
 
+<div class="header-left">
+<span class="menu-btn" onclick="toggleNav()">☰</span>
 <h2>Sandeep Kumar Mondal</h2>
+</div>
 
 <div class="icons">
 
-<a href="mailto:kumarsandeepmondal@gmail.com" target="_blank">
-<i class="fa-solid fa-envelope"></i>
+<a href="https://scholar.google.com/citations?user=g9bjHIUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+<img src="scholar.png" class="icon-img">
 </a>
 
-<a href="https://scholar.google.com/citations?user=g9bjHIUAAAAJ&hl=en" target="_blank">
-<i class="fa-brands fa-google"></i>
+<a href="https://inspirehep.net/authors/1991836" target="_blank" rel="noopener noreferrer">
+<img src="inspire.png" class="icon-img">
 </a>
 
-<a href="https://inspirehep.net/authors/1991836" target="_blank">
-<i class="fa-solid fa-atom"></i>
-</a>
-
-<a href="https://orcid.org/0000-0003-2445-9935" target="_blank">
-<i class="fa-brands fa-orcid"></i>
+<a href="https://orcid.org/0000-0003-2445-9935" target="_blank" rel="noopener noreferrer">
+<img src="orcid.png" class="icon-img">
 </a>
 
 </div>
@@ -220,39 +214,14 @@ and gamma-ray data analysis.
 <script>
 
 function toggleNav(){
-
 let sidebar=document.getElementById("sidebar");
-let main=document.getElementById("main");
 
 if(sidebar.style.width==="260px"){
-
 sidebar.style.width="0";
-main.style.marginLeft="0";
-
 }else{
-
 sidebar.style.width="260px";
-main.style.marginLeft="260px";
-
 }
-
 }
-
-document.addEventListener("click",function(event){
-
-let sidebar=document.getElementById("sidebar");
-let menu=document.querySelector(".menu-btn");
-
-if(sidebar.style.width==="260px" &&
-!sidebar.contains(event.target) &&
-!menu.contains(event.target)){
-
-sidebar.style.width="0";
-document.getElementById("main").style.marginLeft="0";
-
-}
-
-});
 
 </script>
 
