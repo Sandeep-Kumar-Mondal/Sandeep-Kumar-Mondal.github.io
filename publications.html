@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
 <title>Publications | Sandeep Kumar Mondal</title>
 
 <link rel="stylesheet"
@@ -19,7 +18,6 @@ background:white;
 }
 
 /* HEADER */
-
 .header{
 background:linear-gradient(135deg,#134e4a,#22c55e);
 color:white;
@@ -34,21 +32,7 @@ font-family:'Playfair Display',serif;
 margin:0;
 }
 
-/* ICONS */
-
-.icons a{
-color:white;
-margin-left:15px;
-font-size:22px;
-text-decoration:none;
-}
-
-.icons a:hover{
-opacity:0.8;
-}
-
-/* HAMBURGER */
-
+/* SIDEBAR */
 .menu-btn{
 font-size:28px;
 cursor:pointer;
@@ -58,8 +42,6 @@ left:20px;
 color:white;
 z-index:3;
 }
-
-/* SIDEBAR */
 
 .sidebar{
 height:100%;
@@ -71,7 +53,6 @@ background:#ecfdf5;
 overflow-x:hidden;
 transition:0.4s;
 padding-top:80px;
-box-shadow:2px 0 10px rgba(0,0,0,0.2);
 }
 
 .sidebar a{
@@ -86,8 +67,7 @@ color:#065f46;
 background:#d1fae5;
 }
 
-/* MAIN CONTENT */
-
+/* MAIN */
 .main{
 padding:60px;
 max-width:1000px;
@@ -95,47 +75,12 @@ margin:auto;
 transition:margin-left 0.4s;
 }
 
-  .sort-bar{
-margin-bottom:20px;
-}
-
-.sort-bar button{
-background:#10b981;
-color:white;
-border:none;
-padding:8px 14px;
-margin-right:10px;
-cursor:pointer;
-border-radius:6px;
-}
-
-.pub{
-margin-bottom:25px;
-padding-bottom:10px;
-border-bottom:1px solid #e5e7eb;
-}
-
-.title a{
-font-size:18px;
-font-weight:600;
-color:#064e3b;
-text-decoration:none;
-}
-
-.authors{
-margin-top:5px;
-color:#374151;
-}
-
-.journal{
-font-size:14px;
-color:#6b7280;
-}
-
+/* TABLE */
 .pub-table{
 width:100%;
 border-collapse:collapse;
 margin-top:20px;
+font-size:14px;
 }
 
 .pub-table th, .pub-table td{
@@ -148,6 +93,11 @@ vertical-align:top;
 .pub-table th{
 background:#ecfdf5;
 color:#065f46;
+cursor:pointer;
+}
+
+.pub-table tbody tr:hover{
+background:#f0fdf4;
 }
 
 .pub-table a{
@@ -156,163 +106,71 @@ color:#064e3b;
 text-decoration:none;
 }
 
-.pub-table a:hover{
-text-decoration:underline;
-}  
-/* Smaller font */
-.pub-table{
-font-size:14px;
-}
-
-/* Hover highlight */
-.pub-table tbody tr:hover{
-background:#f0fdf4;
-}
-
-/* Clickable headers */
-.pub-table th{
-background:#ecfdf5;
-color:#065f46;
-cursor:pointer;
-}
-  
-  
 </style>
-
 </head>
 
 <body>
 
 <span class="menu-btn" onclick="toggleNav()">☰</span>
 
-<!-- SIDEBAR -->
-
 <div id="sidebar" class="sidebar">
-
 <a href="index.html">Home</a>
 <a href="publications.html">Publications</a>
 <a href="#">Research</a>
 <a href="#">CV</a>
 <a href="#">Talks</a>
-
 </div>
-
-<!-- HEADER -->
 
 <div class="header">
-
 <h2>Publications</h2>
-
 </div>
-
-<!-- MAIN CONTENT -->
 
 <div id="main" class="main">
 
-
-
-
 <h1>Refereed Journal Publications</h1>
-
-
 
 <table class="pub-table" id="pub-table">
 <thead>
 <tr>
 <th>#</th>
 <th>Publication</th>
-<th onclick="sortByYear()">Year ⇅</th>
-<th onclick="sortByCitations()">Citations ⇅</th>
+<th onclick="sortTable('pub-table',2,'year')">Year</th>
+<th onclick="sortTable('pub-table',3,'cite')">Citations</th>
 </tr>
 </thead>
 
 <tbody>
 
-<tr data-year="2026" data-citations="0">
+<tr data-year="2026" data-cite="0">
 <td>1</td>
-<td>
-<a href="https://doi.org/10.3847/1538-4357/ae1f0b" target="_blank">
-Explaining the Origin of TeV Gamma Rays from M87 During High and Low States
-</a><br>
-Nibedita Mondal, <b>Sandeep Kumar Mondal</b>, Nayantara Gupta<br>
-<i>The Astrophysical Journal, 997, 151</i>
-</td>
+<td>Explaining the Origin of TeV Gamma Rays from M87</td>
 <td>2026</td>
-<td class="cite">0</td>
+<td>0</td>
 </tr>
 
-<tr data-year="2023" data-citations="7">
+<tr data-year="2023" data-cite="7">
 <td>2</td>
-<td>
-<a href="https://doi.org/10.3847/1538-4357/acc46b" target="_blank">
-Exploring the Emission Mechanisms of Mrk 180 with long term X-ray and gamma-ray data
-</a><br>
-<b>Sandeep Kumar Mondal</b>, Saikat Das, Nayantara Gupta<br>
-<i>The Astrophysical Journal, 948, 75</i>
-</td>
+<td>Exploring the Emission Mechanisms of Mrk 180</td>
 <td>2023</td>
-<td class="cite">7</td>
+<td>7</td>
 </tr>
 
-<tr data-year="2023" data-citations="7">
+<tr data-year="2023" data-cite="7">
 <td>3</td>
-<td>
-<a href="https://doi.org/10.1093/mnras/stad702" target="_blank">
-Gamma-ray flares and broadband spectral study of PKS 0402-362
-</a><br>
-Avik Kumar Das, <b>Sandeep Kumar Mondal</b>, Raj Prince<br>
-<i>Monthly Notices of the Royal Astronomical Society (2023)</i>
-
-</td>
+<td>Gamma-ray flares of PKS 0402-362</td>
 <td>2023</td>
-<td class="cite"7</td>
+<td>7</td>
 </tr>
 
-<tr data-year="2021" data-citations="8">
+<tr data-year="2021" data-cite="8">
 <td>4</td>
-<td>
-<a href="https://doi.org/10.3847/1538-4357/ac11fa" target="_blank">
-Spectral Modeling of Flares in Long-term Gamma-Ray Light Curve of PKS 0903-57
-</a><br>
-<b>Sandeep Kumar Mondal</b>, Raj Prince, Nayantara Gupta, Avik Kumar Das<br>
-<i>The Astrophysical Journal, 922, 160</i>
-</td>
+<td>Spectral Modeling of Flares of PKS 0903-57</td>
 <td>2021</td>
-<td class="cite">8</td>
-</tr>
-
-<tr data-year="2025" data-citations="0">
-<td>5</td>
-<td>
-<a href="https://arxiv.org/abs/2511.21182" target="_blank">
-Broad-band temporal and spectral study of TeV blazar TXS 0518+211
-</a><br>
-Avik Kumar Das, Pankaj Kushwaha, Veeresh Singh,  <b>Sandeep Kumar Mondal</b>, Goldy Ahuja, Deekshya R. Sarkar
- <br>
-<i>Monthly Notices of the Royal Astronomical Society (2026)</i>
-
-</td>
-<td>2025</td>
-<td class="cite">0</td>
-</tr>
-
-<tr data-year="2025" data-citations="0">
-<td>6</td>
-<td>
-<a href="https://arxiv.org/abs/2603.06116" target="_blank">
-Detection of quasi-periodic oscillations in the 37 GHz radio light curve of the blazar Ton 599 during 1990-2020<br>
-Alok C. Gupta, Alexandr E. Volvach, Shubham Kishore, Larisa N. Volvach, Paul J. Wiita, Lang Cui, Mauri J. Valtonen, <b>Sandeep K. Mondal</b>
-, Haritma Gaur <br>
-<i>Astronomy & Astrophysics (Accepted)</i>
-
-</td>
-<td>2025</td>
-<td class="cite">0</td>
+<td>8</td>
 </tr>
 
 </tbody>
 </table>
-
 
 <h1>Conference Proceedings</h1>
 
@@ -321,49 +179,35 @@ Alok C. Gupta, Alexandr E. Volvach, Shubham Kishore, Larisa N. Volvach, Paul J. 
 <tr>
 <th>#</th>
 <th>Publication</th>
-<th onclick="sortByYear()">Year ⇅</th>
-<th onclick="sortByCitations()">Citations ⇅</th>
+<th onclick="sortTable('conf-table',2,'year')">Year</th>
+<th onclick="sortTable('conf-table',3,'cite')">Citations</th>
 </tr>
 </thead>
 
 <tbody>
 
-<tr data-year="2023" data-citations="0">
+<tr data-year="2023" data-cite="0">
 <td>1</td>
-<td>
-<a href="https://pos.sissa.it/444/942" target="_blank">
-Unraveling the Emission Mechanism of the HBL Source Mrk 180 with Multi-Wavelength Data
-</a><br>
-<b>Sandeep Kumar Mondal</b>, Saikat Das, Nayantara Gupta<br>
-<i>Proceedings of Science, 942 (2023)</i>
-</td>
+<td>HBL Source Mrk 180 Study</td>
 <td>2023</td>
-<td class="cite">0</td>
+<td>0</td>
 </tr>
 
-<tr data-year="2023" data-citations="0">
+<tr data-year="2023" data-cite="0">
 <td>2</td>
-<td>
-<a href="https://pos.sissa.it/444/790" target="_blank">
-Multi-wavelength temporal and spectral study of PKS 0402-362
-</a><br>
-Avik Kumar Das, <b>Sandeep Kumar Mondal</b>, Raj Prince<br>
-<i>Proceedings of Science, 790 (2023)</i>
-</td>
+<td>PKS 0402-362 Study</td>
 <td>2023</td>
-<td class="cite">0</td>
+<td>0</td>
 </tr>
 
 </tbody>
 </table>
 
-
-
-
-
+</div>
 
 <script>
 
+/* Sidebar */
 function toggleNav(){
 let sidebar=document.getElementById("sidebar");
 let main=document.getElementById("main");
@@ -377,82 +221,33 @@ main.style.marginLeft="260px";
 }
 }
 
+/* Sorting */
+let sortState = {};
 
-function getAllRows(){
-let pubRows = [...document.querySelectorAll("#pub-table tbody tr")];
-let confRows = [...document.querySelectorAll("#conf-table tbody tr")];
-return pubRows.concat(confRows);
-}
+function sortTable(tableId, colIndex, type){
 
-function sortByYear(){
+let table = document.getElementById(tableId);
+let tbody = table.querySelector("tbody");
+let rows = Array.from(tbody.querySelectorAll("tr"));
 
-let rows = getAllRows();
-
-rows.sort((a,b)=>{
-return yearDesc 
-? b.dataset.year - a.dataset.year 
-: a.dataset.year - b.dataset.year;
-});
-
-rebuildTables(rows);
-yearDesc = !yearDesc;
-}
-
-function sortByCitations(){
-
-let rows = getAllRows();
+let key = tableId + "-" + colIndex;
+let asc = sortState[key] = !sortState[key];
 
 rows.sort((a,b)=>{
-return citeDesc 
-? b.dataset.citations - a.dataset.citations 
-: a.dataset.citations - b.dataset.citations;
+let valA = type==="year" ? +a.dataset.year : +a.dataset.cite;
+let valB = type==="year" ? +b.dataset.year : +b.dataset.cite;
+
+return asc ? valA - valB : valB - valA;
 });
 
-rebuildTables(rows);
-citeDesc = !citeDesc;
-}
-
-function updateSerialNumbers(){
-
-["pub-table","conf-table"].forEach(id=>{
-let rows=document.querySelectorAll(`#${id} tbody tr`);
-rows.forEach((row,index)=>{
-row.cells[0].innerText=index+1;
-});
+tbody.innerHTML = "";
+rows.forEach((row,i)=>{
+row.cells[0].innerText = i+1;
+tbody.appendChild(row);
 });
 
 }
 
-
-function rebuildTables(rows){
-
-let pubBody = document.querySelector("#pub-table tbody");
-let confBody = document.querySelector("#conf-table tbody");
-
-pubBody.innerHTML = "";
-confBody.innerHTML = "";
-
-rows.forEach(row=>{
-if(row.closest("#pub-table")){
-pubBody.appendChild(row);
-}else{
-confBody.appendChild(row);
-}
-});
-
-updateSerialNumbers();
-}  
-function hideZeroCitations(){
-document.querySelectorAll(".cite").forEach(td=>{
-if(td.innerText.trim() === "0"){
-td.innerText = "";
-}
-});
-}
-
-// run once on page load
-hideZeroCitations();
-  
 </script>
 
 </body>
