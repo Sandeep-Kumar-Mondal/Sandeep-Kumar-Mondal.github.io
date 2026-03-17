@@ -4,9 +4,6 @@
 <head>
 <title>Publications | Sandeep Kumar Mondal</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
 
 <style>
@@ -39,12 +36,17 @@ gap:20px;
 .menu-btn{
 font-size:26px;
 cursor:pointer;
+color:white;
 }
 
-.icons a{
-color:white;
+.icons{
+display:flex;
+align-items:center;
+}
+
+.icon-img{
+height:22px;
 margin-left:15px;
-font-size:22px;
 }
 
 /* SIDEBAR */
@@ -59,12 +61,11 @@ background:linear-gradient(180deg,#022c22,#065f46);
 transition:0.4s;
 padding-top:80px;
 z-index:3;
-overflow-x:hidden;
 }
 
 .sidebar a{
-padding:12px 30px;
 display:block;
+padding:12px 30px;
 color:#d1fae5;
 text-decoration:none;
 }
@@ -90,10 +91,10 @@ color:white;
 padding:60px;
 max-width:1000px;
 margin:auto;
-margin-left:260px;   
+margin-left:260px;  /* FIXED INITIAL POSITION */
 transition:margin-left 0.4s;
 }
-  
+
 /* TABLE */
 
 .pub-table{
@@ -167,20 +168,20 @@ color:#6b7280;
 
 <div class="icons">
 
-<a href="mailto:kumarsandeepmondal@gmail.com" target="_blank">
-<i class="fa-solid fa-envelope"></i>
+<a href="mailto:kumarsandeepmondal@gmail.com">
+<img src="email.png" class="icon-img">
 </a>
 
-<a href="https://scholar.google.com/citations?user=g9bjHIUAAAAJ&hl=en" target="_blank">
-<i class="fa-brands fa-google"></i>
+<a href="https://scholar.google.com/citations?user=g9bjHIUAAAAJ&hl=en">
+<img src="scholar.png" class="icon-img">
 </a>
 
-<a href="https://inspirehep.net/authors/1991836" target="_blank">
-<i class="fa-solid fa-atom"></i>
+<a href="https://inspirehep.net/authors/1991836">
+<img src="inspire.png" class="icon-img">
 </a>
 
-<a href="https://orcid.org/0000-0003-2445-9935" target="_blank">
-<i class="fa-brands fa-orcid"></i>
+<a href="https://orcid.org/0000-0003-2445-9935">
+<img src="orcid.png" class="icon-img">
 </a>
 
 </div>
@@ -194,7 +195,6 @@ color:#6b7280;
 <h1>Refereed Journal Publications</h1>
 
 <table class="pub-table" id="pub-table">
-
 <thead>
 <tr>
 <th>#</th>
@@ -326,7 +326,6 @@ Astronomy & Astrophysics (Accepted)
 <h1>Conference Proceedings</h1>
 
 <table class="pub-table" id="conf-table">
-
 <thead>
 <tr>
 <th>#</th>
@@ -383,23 +382,9 @@ Proceedings of Science (2023)
 
 <script>
 
-let isOpen=false;
-
 function toggleNav(){
-
 let sidebar=document.getElementById("sidebar");
-let main=document.getElementById("main");
-
-if(!isOpen){
-sidebar.style.width="260px";
-main.style.marginLeft="260px";
-isOpen=true;
-}else{
-sidebar.style.width="0";
-/* DO NOT RESET margin */
-isOpen=false;
-}
-
+sidebar.style.width = sidebar.style.width==="260px" ? "0" : "260px";
 }
 
 let sortState = {};
