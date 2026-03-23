@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>CV | Sandeep Kumar Mondal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+}
+
+/* HEADER */
+.header{
+background:linear-gradient(135deg,#134e4a,#22c55e);
+color:white;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:2;
+}
+
+.header-left{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.menu-btn{
+font-size:26px;
+cursor:pointer;
+color:white;
+}
+
+.icons{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.icons a{
+color:white;
+font-size:18px;
+opacity:0.85;
+transition:0.25s;
+}
+
+.icons a:hover{
+opacity:1;
+transform:translateY(-2px);
+}
+
+/* SIDEBAR */
+.sidebar{
+height:100%;
+width:0;
+position:fixed;
+top:0;
+left:0;
+background:linear-gradient(180deg,#022c22,#065f46);
+transition:0.4s;
+padding-top:80px;
+z-index:3;
+overflow-x:hidden;
+}
+
+.sidebar a{
+display:block;
+padding:12px 30px;
+color:#d1fae5;
+text-decoration:none;
+}
+
+.sidebar a:hover{
+background:#064e3b;
+}
+
+.close-btn{
+position:absolute;
+top:20px;
+right:20px;
+font-size:22px;
+cursor:pointer;
+color:white;
+}
+
+/* MAIN */
+.main{
+padding:60px;
+max-width:900px;
+margin:auto;
+margin-left:260px;
+}
+
+/* SECTION STYLE */
+.section{
+margin-bottom:40px;
+}
+
+.section h2{
+color:#065f46;
+border-bottom:2px solid #22c55e;
+padding-bottom:6px;
+margin-bottom:15px;
+}
+
+.item{
+margin-bottom:15px;
+}
+
+.item-title{
+font-weight:600;
+}
+
+.item-sub{
+color:#374151;
+font-size:14px;
+}
+
+.date{
+float:right;
+color:#6b7280;
+font-size:14px;
+}
+
+ul{
+margin-top:5px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div id="sidebar" class="sidebar">
+<span class="close-btn" onclick="toggleNav()">&#8592;</span>
+<a href="index.html">Home</a>
+<a href="publications.html">Publications</a>
+<a href="Research.html">Research</a>
+<a href="CV.html">CV</a>
+<a href="#">Talks</a>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+<div class="header-left">
+<span class="menu-btn" onclick="toggleNav()">☰</span>
+<h2>Curriculum Vitae</h2>
+</div>
+
+<div class="icons">
+<a href="mailto:sandeep@sjtu.edu.cn"><i class="fas fa-envelope"></i></a>
+<a href="https://arxiv.org"><i class="fas fa-file-lines"></i></a>
+<a href="https://scholar.google.com"><i class="fas fa-graduation-cap"></i></a>
+<a href="https://inspirehep.net/authors/1991836"><i class="fas fa-atom"></i></a>
+<a href="https://orcid.org/0000-0003-2445-9935"><i class="fab fa-orcid"></i></a>
+</div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<h1>Sandeep Kumar Mondal</h1>
+<p>Postdoctoral Researcher, Tsung-Dao Lee Institute (TDLI), Shanghai Jiao Tong University</p>
+
+<!-- CURRENT POSITION -->
+<div class="section">
+<h2>Current Position</h2>
+
+<div class="item">
+<span class="date">Apr 2025 – Present</span>
+<div class="item-title">Postdoctoral Researcher</div>
+<div class="item-sub">
+TRIDENT Collaboration & Particle Astrophysics Theory Group<br>
+Tsung-Dao Lee Institute (TDLI), Shanghai Jiao Tong University, China
+</div>
+</div>
+
+</div>
+
+<!-- PREVIOUS POSITION -->
+<div class="section">
+<h2>Previous Position</h2>
+
+<div class="item">
+<span class="date">Jan 2025 – Apr 2025</span>
+<div class="item-title">Research Associate-I</div>
+<div class="item-sub">
+Astronomy & Astrophysics Division<br>
+Aryabhatta Research Institute of Observational Sciences (ARIES), Nainital, India
+</div>
+</div>
+
+</div>
+
+<!-- EDUCATION -->
+<div class="section">
+<h2>Education</h2>
+
+<div class="item">
+<span class="date">2018 – 2024</span>
+<div class="item-title">Ph.D. in Physical Sciences (Astronomy & Astrophysics)</div>
+<div class="item-sub">Raman Research Institute, Bangalore, India</div>
+</div>
+
+<div class="item">
+<span class="date">2015 – 2017</span>
+<div class="item-title">M.Sc. in Physics</div>
+<div class="item-sub">Jadavpur University, Kolkata, India</div>
+</div>
+
+<div class="item">
+<span class="date">2012 – 2015</span>
+<div class="item-title">B.Sc. in Physics</div>
+<div class="item-sub">Jadavpur University, Kolkata, India</div>
+</div>
+
+</div>
+
+<!-- RESEARCH INTEREST -->
+<div class="section">
+<h2>Research Interests</h2>
+<ul>
+<li>Multi-wavelength data analysis</li>
+<li>AGN spectral energy distribution (SED) modelling</li>
+<li>Ultra-high energy cosmic ray propagation</li>
+<li>Quasi-periodic oscillations in AGNs</li>
+</ul>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
+<h2>Technical Skills</h2>
+<ul>
+<li>Programming: Python, C, FORTRAN, HTML</li>
+<li>Tools: Fermi Science Tools, Fermipy, GAMERA, Naima, JetSet, agnpy</li>
+<li>Operating Systems: Linux, macOS, Windows</li>
+</ul>
+</div>
+
+</div>
+
+<script>
+function toggleNav(){
+let sidebar=document.getElementById("sidebar");
+sidebar.style.width = sidebar.style.width==="260px" ? "0" : "260px";
+}
+</script>
+
+</body>
+</html>
