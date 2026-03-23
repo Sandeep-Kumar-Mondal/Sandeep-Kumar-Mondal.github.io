@@ -12,7 +12,6 @@
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:#f9fafb;
 }
 
 /* HEADER */
@@ -37,11 +36,12 @@ gap:20px;
 .menu-btn{
 font-size:26px;
 cursor:pointer;
+color:white;
 }
 
-/* ICONS */
 .icons{
 display:flex;
+align-items:center;
 gap:18px;
 }
 
@@ -68,6 +68,7 @@ background:linear-gradient(180deg,#022c22,#065f46);
 transition:0.4s;
 padding-top:80px;
 z-index:3;
+overflow-x:hidden;
 }
 
 .sidebar a{
@@ -93,33 +94,46 @@ color:white;
 /* MAIN */
 .main{
 padding:60px;
+max-width:900px;
+margin:auto;
 margin-left:260px;
 }
 
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-margin-top:30px;
+/* SECTION */
+.section{
+margin-bottom:50px;
 }
 
-/* CARD */
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
-transition:0.3s;
+.section h2{
+color:#065f46;
+border-bottom:2px solid #22c55e;
+padding-bottom:6px;
+margin-bottom:20px;
 }
 
-.card:hover{
-transform:translateY(-5px);
+/* TEXT */
+p{
+color:#374151;
+line-height:1.7;
 }
 
-/* IMAGE */
-.card img{
+/* HIGHLIGHT BLOCK */
+.highlight{
+margin-bottom:40px;
+}
+
+.highlight-title{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.figure{
+margin-top:12px;
+}
+
+.figure img{
 width:100%;
+max-width:650px;
 border-radius:6px;
 }
 
@@ -129,23 +143,23 @@ color:#6b7280;
 margin-top:5px;
 }
 
-/* TITLE */
-.card-title{
-font-size:18px;
-font-weight:600;
-margin-bottom:10px;
+/* ✅ NEW: GRID (SAFE ADDITION) */
+.research-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
 }
 
-/* BUTTON */
+/* ✅ NEW: READ MORE BUTTON */
 .read-more{
 display:inline-block;
-margin-top:12px;
-padding:8px 14px;
+margin-top:10px;
+padding:6px 14px;
 background:#22c55e;
 color:white;
 text-decoration:none;
-border-radius:5px;
-font-size:14px;
+border-radius:4px;
+font-size:13px;
 }
 
 .read-more:hover{
@@ -161,8 +175,8 @@ background:#16a34a;
 <div id="sidebar" class="sidebar">
 <span class="close-btn" onclick="toggleNav()">&#8592;</span>
 <a href="index.html">Home</a>
-<a href="research.html">Research</a>
 <a href="publications.html">Publications</a>
+<a href="research.html">Research</a>
 <a href="cv.html">CV</a>
 </div>
 
@@ -185,37 +199,73 @@ background:#16a34a;
 <!-- MAIN -->
 <div class="main">
 
-<h1>Highlighted Research</h1>
+<h1>Research Overview</h1>
 
-<div class="grid">
+<p>
+My research focuses on high-energy astrophysics, with an emphasis on relativistic jets, particle acceleration, and multi-wavelength emission processes.
+</p>
 
-<!-- CARD 1 -->
-<div class="card">
-<div class="card-title">Spectral Modeling of Flares in PKS 0903-57</div>
+<!-- HIGHLIGHTED RESEARCH -->
+<div class="section">
+<h2>Highlighted Research</h2>
 
+<!-- ✅ GRID START -->
+<div class="research-grid">
+
+<!-- WORK 1 -->
+<div class="highlight">
+<div class="highlight-title">
+Spectral Modeling of Flares in PKS 0903-57
+</div>
+
+<p>
+Temporal and spectral analysis of gamma-ray flares to probe jet physics and particle evolution.
+</p>
+
+<div class="figure">
 <img src="images/pks0903_sed.png">
-<div class="caption">Broadband SED during flaring state.</div>
-
-<p>
-Gamma-ray flare analysis and SED modeling to probe jet physics.
-</p>
-
-<a href="pks0903.html" target="_blank" class="read-more">Read More →</a>
+<div class="caption">Broadband SED modeling during flaring state.</div>
 </div>
 
-<!-- CARD 2 -->
-<div class="card">
-<div class="card-title">Multi-wavelength Study of Mrk 180</div>
+<a href="pks0903.html" target="_blank" class="read-more">
+Read More →
+</a>
+</div>
 
+<!-- WORK 2 -->
+<div class="highlight">
+<div class="highlight-title">
+Multi-wavelength Study of Mrk 180
+</div>
+
+<p>
+Multi-band variability study to understand emission mechanisms in blazar jets.
+</p>
+
+<div class="figure">
 <img src="images/mrk180_sed.png">
-<div class="caption">SED modeling of Mrk 180.</div>
-
-<p>
-Multi-band variability and emission mechanism study.
-</p>
-
-<a href="mrk180.html" target="_blank" class="read-more">Read More →</a>
+<div class="caption">Multi-wavelength SED fit for Mrk 180.</div>
 </div>
+
+<a href="mrk180.html" target="_blank" class="read-more">
+Read More →
+</a>
+</div>
+
+</div>
+<!-- ✅ GRID END -->
+
+</div>
+
+<!-- RESEARCH AREAS -->
+<div class="section">
+<h2>Research Areas</h2>
+
+<p><b>Multi-wavelength Data Analysis:</b> Gamma-ray, X-ray, and optical/UV variability studies.</p>
+<p><b>Spectral Energy Distribution Modelling:</b> Leptonic modeling using JetSeT, GAMERA, Naima.</p>
+<p><b>Neutrino–Gamma-ray Connection:</b> Exploring high-energy neutrino associations.</p>
+<p><b>Quasi-Periodic Oscillations:</b> Time-series analysis of AGN variability.</p>
+<p><b>Cosmic Ray Simulations:</b> UHECR propagation and cascade simulations.</p>
 
 </div>
 
