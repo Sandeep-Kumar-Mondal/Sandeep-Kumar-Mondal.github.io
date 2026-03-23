@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Research | Sandeep Kumar Mondal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+}
+
+/* HEADER */
+.header{
+background:linear-gradient(135deg,#134e4a,#22c55e);
+color:white;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:2;
+}
+
+.header-left{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.menu-btn{
+font-size:26px;
+cursor:pointer;
+color:white;
+}
+
+.icons{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.icons a{
+color:white;
+font-size:18px;
+opacity:0.85;
+transition:0.25s;
+}
+
+.icons a:hover{
+opacity:1;
+transform:translateY(-2px);
+}
+
+/* SIDEBAR */
+.sidebar{
+height:100%;
+width:0;
+position:fixed;
+top:0;
+left:0;
+background:linear-gradient(180deg,#022c22,#065f46);
+transition:0.4s;
+padding-top:80px;
+z-index:3;
+overflow-x:hidden;
+}
+
+.sidebar a{
+display:block;
+padding:12px 30px;
+color:#d1fae5;
+text-decoration:none;
+}
+
+.sidebar a:hover{
+background:#064e3b;
+}
+
+.close-btn{
+position:absolute;
+top:20px;
+right:20px;
+font-size:22px;
+cursor:pointer;
+color:white;
+}
+
+/* MAIN */
+.main{
+padding:60px;
+max-width:900px;
+margin:auto;
+margin-left:260px;
+}
+
+/* SECTION */
+.section{
+margin-bottom:50px;
+}
+
+.section h2{
+color:#065f46;
+border-bottom:2px solid #22c55e;
+padding-bottom:6px;
+margin-bottom:20px;
+}
+
+/* TEXT */
+p{
+color:#374151;
+line-height:1.7;
+}
+
+/* HIGHLIGHT BLOCK */
+.highlight{
+margin-bottom:40px;
+}
+
+.highlight-title{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.figure{
+margin-top:12px;
+}
+
+.figure img{
+width:100%;
+max-width:650px;
+border-radius:6px;
+}
+
+.caption{
+font-size:13px;
+color:#6b7280;
+margin-top:5px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div id="sidebar" class="sidebar">
+<span class="close-btn" onclick="toggleNav()">&#8592;</span>
+<a href="index.html">Home</a>
+<a href="publications.html">Publications</a>
+<a href="Research.html">Research</a>
+<a href="CV.html">CV</a>
+<a href="#">Talks</a>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+<div class="header-left">
+<span class="menu-btn" onclick="toggleNav()">☰</span>
+<h2>Research</h2>
+</div>
+
+<div class="icons">
+<a href="mailto:sandeep@sjtu.edu.cn"><i class="fas fa-envelope"></i></a>
+<a href="https://arxiv.org"><i class="fas fa-file-lines"></i></a>
+<a href="https://scholar.google.com"><i class="fas fa-graduation-cap"></i></a>
+<a href="https://inspirehep.net/authors/1991836"><i class="fas fa-atom"></i></a>
+<a href="https://orcid.org/0000-0003-2445-9935"><i class="fab fa-orcid"></i></a>
+</div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<h1>Research Overview</h1>
+
+<p>
+My research focuses on high-energy astrophysics, with an emphasis on understanding the physical processes governing emission from relativistic jets in Active Galactic Nuclei (AGN). Using multi-wavelength observations and theoretical modeling, I investigate particle acceleration, radiation mechanisms, and their possible connection to high-energy neutrinos.
+</p>
+
+<!-- HIGHLIGHTED RESEARCH -->
+<div class="section">
+<h2>Highlighted Research</h2>
+
+<div class="highlight">
+<div class="highlight-title">
+Spectral Modeling of Flares in PKS 0903-57
+</div>
+
+<p>
+We performed a detailed temporal and spectral analysis of long-term gamma-ray observations of the blazar PKS 0903-57. Multiple flaring episodes were identified and modeled to probe the evolution of the emitting particle population.
+</p>
+
+<p>
+Using leptonic spectral energy distribution (SED) modeling, we constrained key jet parameters such as magnetic field strength, electron energy distribution, and Doppler boosting. The study provides insights into the physical origin of rapid variability and energy dissipation in relativistic jets.
+</p>
+
+<div class="figure">
+<img src="images/pks0903_sed.png">
+<div class="caption">Broadband SED modeling during flaring state.</div>
+</div>
+
+</div>
+
+<div class="highlight">
+<div class="highlight-title">
+Multi-wavelength Study of Mrk 180
+</div>
+
+<p>
+This work presents a comprehensive analysis of the high-frequency peaked BL Lac object Mrk 180 using long-term X-ray and gamma-ray observations. The study focuses on spectral variability and correlation across different energy bands.
+</p>
+
+<p>
+Broadband SED modeling was used to investigate the interplay between synchrotron and inverse Compton emission processes, providing constraints on the physical conditions in the jet and the dominant radiation mechanisms.
+</p>
+
+<div class="figure">
+<img src="images/mrk180_sed.png">
+<div class="caption">Multi-wavelength SED fit for Mrk 180.</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- RESEARCH AREAS -->
+<div class="section">
+<h2>Research Areas</h2>
+
+<p><b>Multi-wavelength Data Analysis:</b> Analysis of gamma-ray, X-ray, and optical/UV data to study variability, spectral evolution, and flaring behavior of AGNs.</p>
+
+<p><b>Spectral Energy Distribution Modelling:</b> Leptonic modeling of AGN emission using tools such as GAMERA, JetSeT, and Naima.</p>
+
+<p><b>Neutrino–Gamma-ray Connection:</b> Investigation of the possible association between high-energy neutrinos and blazar emission.</p>
+
+<p><b>Quasi-Periodic Oscillations:</b> Time-series analysis to identify periodic signals and probe jet dynamics.</p>
+
+<p><b>Cosmic Ray Simulations:</b> Simulation of ultra-high energy cosmic ray propagation and electromagnetic cascades.</p>
+
+</div>
+
+</div>
+
+<script>
+function toggleNav(){
+let sidebar=document.getElementById("sidebar");
+sidebar.style.width = sidebar.style.width==="260px" ? "0" : "260px";
+}
+</script>
+
+</body>
+</html>
