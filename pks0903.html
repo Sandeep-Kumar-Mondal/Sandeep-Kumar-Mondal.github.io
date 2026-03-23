@@ -4,23 +4,123 @@
 <head>
 <title>PKS 0903-57 | Research</title>
 
-<!-- SAME LINKS -->
-<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-/* COPY SAME STYLE FROM ABOVE (header, sidebar, main) */
 
-.main{
-padding:60px;
-margin-left:260px;
-max-width:900px;
+/* 🔴 COPY EXACT SAME CSS FROM research.html (DO NOT CHANGE ANYTHING) */
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
 }
 
-img{
-width:100%;
-border-radius:6px;
+/* HEADER */
+.header{
+background:linear-gradient(135deg,#134e4a,#22c55e);
+color:white;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:2;
+}
+
+.header-left{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.menu-btn{
+font-size:26px;
+cursor:pointer;
+color:white;
+}
+
+.icons{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.icons a{
+color:white;
+font-size:18px;
+opacity:0.85;
+transition:0.25s;
+}
+
+.icons a:hover{
+opacity:1;
+transform:translateY(-2px);
+}
+
+/* SIDEBAR */
+.sidebar{
+height:100%;
+width:0;
+position:fixed;
+top:0;
+left:0;
+background:linear-gradient(180deg,#022c22,#065f46);
+transition:0.4s;
+padding-top:80px;
+z-index:3;
+overflow-x:hidden;
+}
+
+.sidebar a{
+display:block;
+padding:12px 30px;
+color:#d1fae5;
+text-decoration:none;
+}
+
+.sidebar a:hover{
+background:#064e3b;
+}
+
+.close-btn{
+position:absolute;
+top:20px;
+right:20px;
+font-size:22px;
+cursor:pointer;
+color:white;
+}
+
+/* MAIN */
+.main{
+padding:60px;
+max-width:900px;
+margin:auto;
+margin-left:260px;
+}
+
+/* TEXT */
+p{
+color:#374151;
+line-height:1.7;
+}
+
+.figure{
 margin-top:20px;
+}
+
+.figure img{
+width:100%;
+max-width:700px;
+border-radius:6px;
+}
+
+.caption{
+font-size:13px;
+color:#6b7280;
+margin-top:5px;
 }
 
 </style>
@@ -28,8 +128,7 @@ margin-top:20px;
 
 <body>
 
-<!-- SAME SIDEBAR + HEADER (COPY EXACTLY) -->
-
+<!-- SIDEBAR -->
 <div id="sidebar" class="sidebar">
 <span class="close-btn" onclick="toggleNav()">&#8592;</span>
 <a href="index.html">Home</a>
@@ -38,6 +137,7 @@ margin-top:20px;
 <a href="cv.html">CV</a>
 </div>
 
+<!-- HEADER -->
 <div class="header">
 <div class="header-left">
 <span class="menu-btn" onclick="toggleNav()">☰</span>
@@ -45,31 +145,42 @@ margin-top:20px;
 </div>
 
 <div class="icons">
-<a href="#"><i class="fas fa-envelope"></i></a>
-<a href="#"><i class="fas fa-file-lines"></i></a>
-<a href="#"><i class="fas fa-graduation-cap"></i></a>
-<a href="#"><i class="fas fa-atom"></i></a>
-<a href="#"><i class="fab fa-orcid"></i></a>
+<a href="mailto:sandeep@sjtu.edu.cn"><i class="fas fa-envelope"></i></a>
+<a href="https://arxiv.org"><i class="fas fa-file-lines"></i></a>
+<a href="https://scholar.google.com"><i class="fas fa-graduation-cap"></i></a>
+<a href="https://inspirehep.net/authors/1991836"><i class="fas fa-atom"></i></a>
+<a href="https://orcid.org/0000-0003-2445-9935"><i class="fab fa-orcid"></i></a>
 </div>
 </div>
 
+<!-- MAIN -->
 <div class="main">
 
-<h1>PKS 0903-57: Spectral Modeling of Flares</h1>
+<h1>Spectral Modeling of Flares in PKS 0903-57</h1>
 
 <p>
-Detailed temporal and spectral analysis of gamma-ray flares observed in PKS 0903-57...
+We performed a detailed temporal and spectral analysis of long-term gamma-ray observations of PKS 0903-57. Multiple flaring episodes were identified and modeled to understand the evolution of the emitting particle population.
 </p>
 
+<p>
+Using leptonic spectral energy distribution (SED) modeling, we constrained key jet parameters such as magnetic field strength, electron energy distribution, and Doppler boosting.
+</p>
+
+<div class="figure">
 <img src="images/pks0903_sed.png">
+<div class="caption">Broadband SED modeling during flaring state.</div>
+</div>
 
 <p>
-Include:
-- Light curve analysis  
-- SED modeling  
-- Physical interpretation  
-- Results and conclusions  
+Further analysis includes:
 </p>
+
+<ul>
+<li>Gamma-ray light curve variability</li>
+<li>Time-resolved spectral fitting</li>
+<li>Jet energetics and particle acceleration</li>
+<li>Physical interpretation of flaring mechanisms</li>
+</ul>
 
 </div>
 
