@@ -39,23 +39,24 @@ cursor:pointer;
 color:white;
 }
 
+
 .icons{
 display:flex;
 align-items:center;
+gap:18px;
 }
 
 .icon-img{
 height:20px;
 width:20px;
-margin-left:15px;
+filter: brightness(0) invert(1);   /* pure white icons */
 opacity:0.85;
-transition:0.2s ease;
-object-fit:contain;
+transition:all 0.25s ease;
 }
 
 .icon-img:hover{
 opacity:1;
-transform:translateY(-1px);
+transform:translateY(-2px);
 }
 
 /* SIDEBAR */
@@ -184,10 +185,27 @@ color:#6b7280;
 </div>
 
 <div class="icons">
-<a href="mailto:kumarsandeepmondal@gmail.com"><img src="email.png" class="icon-img"></a>
-<a href="https://scholar.google.com" target="_blank"><img src="scholar.png" class="icon-img"></a>
-<a href="https://inspirehep.net/authors/1991836" target="_blank"><img src="inspire.png" class="icon-img"></a>
-<a href="https://orcid.org/0000-0003-2445-9935" target="_blank"><img src="orcid.png" class="icon-img"></a>
+
+<a href="mailto:kumarsandeepmondal@gmail.com" title="Email">
+<img src="email.png" class="icon-img">
+</a>
+
+<a href="https://arxiv.org" target="_blank" title="arXiv">
+<img src="arxiv.png" class="icon-img">
+</a>
+
+<a href="https://scholar.google.com" target="_blank" title="Google Scholar">
+<img src="scholar.png" class="icon-img">
+</a>
+
+<a href="https://inspirehep.net/authors/1991836" target="_blank" title="INSPIRE-HEP">
+<img src="inspire.png" class="icon-img">
+</a>
+
+<a href="https://orcid.org/0000-0003-2445-9935" target="_blank" title="ORCID">
+<img src="orcid.png" class="icon-img">
+</a>
+
 </div>
 </div>
 
