@@ -39,6 +39,7 @@ cursor:pointer;
 color:white;
 }
 
+/* ICONS */
 .icons{
 display:flex;
 align-items:center;
@@ -94,14 +95,16 @@ color:white;
 /* MAIN */
 .main{
 padding:60px;
-max-width:900px;
+max-width:950px;
 margin:auto;
 margin-left:260px;
+font-size:16px;
+line-height:1.75;
 }
 
 /* SECTION */
 .section{
-margin-bottom:50px;
+margin-bottom:60px;
 }
 
 .section h2{
@@ -115,45 +118,63 @@ margin-bottom:20px;
 p{
 color:#374151;
 line-height:1.7;
+text-align:justify;
 }
 
-/* HIGHLIGHT BLOCK */
+/* GRID */
+.research-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+margin-top:30px;
+}
+
+/* CARD */
 .highlight{
-margin-bottom:40px;
+background:#ffffff;
+padding:18px;
+border-radius:8px;
+box-shadow:0 3px 10px rgba(0,0,0,0.06);
+transition:0.25s;
 }
 
+.highlight:hover{
+transform:translateY(-4px);
+}
+
+/* TITLE */
 .highlight-title{
 font-size:18px;
+font-weight:600;
 margin-bottom:10px;
+color:#064e3b;
 }
 
+/* IMAGE */
 .figure{
 margin-top:12px;
+text-align:center;
 }
 
 .figure img{
 width:100%;
-max-width:650px;
+height:220px;
+object-fit:cover;
 border-radius:6px;
 }
 
+/* CAPTION */
 .caption{
-font-size:13px;
+font-size:12.5px;
 color:#6b7280;
-margin-top:5px;
+margin-top:6px;
+text-align:center;
 }
 
-/* ✅ NEW: GRID (SAFE ADDITION) */
-.research-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-}
-
-/* ✅ NEW: READ MORE BUTTON */
+/* BUTTON */
 .read-more{
 display:inline-block;
-margin-top:10px;
+margin-top:12px;
 padding:6px 14px;
 background:#22c55e;
 color:white;
@@ -202,34 +223,31 @@ background:#16a34a;
 <h1>Research Overview</h1>
 
 <p>
-My research focuses on high-energy astrophysics, with an emphasis on relativistic jets, particle acceleration, and multi-wavelength emission processes.
+My research focuses on high-energy astrophysics, with an emphasis on understanding the physical processes governing emission from relativistic jets in Active Galactic Nuclei (AGN). Using multi-wavelength observations and theoretical modeling, I investigate particle acceleration, radiation mechanisms, and their possible connection to high-energy neutrinos.
 </p>
 
 <!-- HIGHLIGHTED RESEARCH -->
 <div class="section">
 <h2>Highlighted Research</h2>
 
-<!-- ✅ GRID START -->
 <div class="research-grid">
 
 <!-- WORK 1 -->
 <div class="highlight">
 <div class="highlight-title">
-Spectral Modelling of Flares in PKS 0903-57
+Spectral Modeling of Flares in PKS 0903-57
 </div>
 
 <p>
-Temporal and spectral analysis of gamma-ray flares to probe jet physics and particle evolution.
+Timing and spectral analysis of gamma-ray flares to probe particle acceleration and jet physics.
 </p>
 
 <div class="figure">
 <img src="image/pks0903_sed.jpg">
-<div class="caption">Broadband SED modeling during flaring state.</div>
+<div class="caption">Broadband SED modeling during flaring states.</div>
 </div>
 
-<a href="pks0903.html" target="_blank" class="read-more">
-Read More →
-</a>
+<a href="pks0903.html" target="_blank" class="read-more">Read More →</a>
 </div>
 
 <!-- WORK 2 -->
@@ -239,23 +257,38 @@ Multi-wavelength Study of Mrk 180
 </div>
 
 <p>
-Multi-band variability study to understand emission mechanisms in blazar jets.
+Investigation of spectral variability and emission mechanisms using long-term multi-band observations.
 </p>
 
 <div class="figure">
 <img src="image/mrk_180_sed.jpg">
-<div class="caption">Multi-wavelength SED modelling of Mrk 180.</div>
+<div class="caption">Leptonic + hadronic modeling of broadband SED.</div>
 </div>
 
-<a href="mrk180.html" target="_blank" class="read-more">
-Read More →
-</a>
+<a href="mrk180.html" target="_blank" class="read-more">Read More →</a>
 </div>
 
 </div>
-<!-- ✅ GRID END -->
 
+</div>
 
+<!-- RESEARCH AREAS -->
+<div class="section">
+<h2>Research Areas</h2>
+
+<p><b>Multi-wavelength Data Analysis:</b> Analysis of gamma-ray, X-ray, and optical/UV data to study variability and spectral evolution.</p>
+
+<p><b>Spectral Energy Distribution Modelling:</b> Leptonic modeling using tools such as GAMERA, JetSeT, and Naima.</p>
+
+<p><b>Neutrino–Gamma-ray Connection:</b> Investigation of the association between high-energy neutrinos and blazar emission.</p>
+
+<p><b>Quasi-Periodic Oscillations:</b> Time-series analysis to probe jet dynamics.</p>
+
+<p><b>Cosmic Ray Simulations:</b> Simulation of ultra-high energy cosmic ray propagation.</p>
+
+</div>
+
+</div>
 
 <script>
 function toggleNav(){
