@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>PKS 0903-57 | Research</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- KEEP SAME STYLE -->
+<style>
+/* paste SAME CSS from research.html */
+</style>
+
+</head>
+
+<body>
+
+<!-- SAME SIDEBAR -->
+<div id="sidebar" class="sidebar">
+<span class="close-btn" onclick="toggleNav()">&#8592;</span>
+<a href="index.html">Home</a>
+<a href="research.html">Research</a>
+<a href="publications.html">Publications</a>
+<a href="cv.html">CV</a>
+</div>
+
+<!-- SAME HEADER -->
+<div class="header">
+<div class="header-left">
+<span class="menu-btn" onclick="toggleNav()">☰</span>
+<h2>Research</h2>
+</div>
+
+<div class="icons">
+<a href="mailto:sandeep@sjtu.edu.cn"><i class="fas fa-envelope"></i></a>
+<a href="https://arxiv.org"><i class="fas fa-file-lines"></i></a>
+<a href="https://scholar.google.com"><i class="fas fa-graduation-cap"></i></a>
+<a href="https://inspirehep.net/authors/1991836"><i class="fas fa-atom"></i></a>
+<a href="https://orcid.org/0000-0003-2445-9935"><i class="fab fa-orcid"></i></a>
+</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+<h1>Spectral Modeling of Flares in PKS 0903-57</h1>
+
+<p>
+Here you write your **detailed explanation**:
+- Data analysis
+- Light curves
+- SED modeling
+- Physical interpretation
+</p>
+
+<div class="figure">
+<img src="images/pks0903_sed.png">
+<div class="caption">Broadband SED modeling during flaring state.</div>
+</div>
+
+<p>
+Add more figures, equations, discussion, results, conclusions.
+</p>
+
+</div>
+
+<script>
+function toggleNav(){
+let sidebar=document.getElementById("sidebar");
+sidebar.style.width = sidebar.style.width==="260px" ? "0" : "260px";
+}
+</script>
+
+</body>
+</html>
