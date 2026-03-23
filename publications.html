@@ -45,8 +45,17 @@ align-items:center;
 }
 
 .icon-img{
-height:22px;
+height:20px;
+width:20px;
 margin-left:15px;
+opacity:0.85;
+transition:0.2s ease;
+object-fit:contain;
+}
+
+.icon-img:hover{
+opacity:1;
+transform:translateY(-1px);
 }
 
 /* SIDEBAR */
@@ -92,7 +101,7 @@ color:white;
 padding:60px;
 max-width:1000px;
 margin:auto;
-margin-left:260px;  /* FIXED INITIAL POSITION */
+margin-left:260px;
 transition:margin-left 0.4s;
 }
 
@@ -120,6 +129,21 @@ text-align:left;
 
 .pub-table tbody tr:hover{
 background:#f0fdf4;
+}
+
+/* FIX CITATION COLUMN */
+
+.pub-table th.cite-col,
+.pub-table td:nth-child(4){
+text-align:center;
+}
+
+.nowrap{
+white-space:nowrap;
+}
+
+.pub-table th.cite-col{
+min-width:140px;
 }
 
 .title a{
@@ -173,7 +197,7 @@ color:#6b7280;
 <img src="email.png" class="icon-img">
 </a>
 
-<a href="https://scholar.google.com/s?user=g9bjHIUAAAAJ&hl=en" target="_blank">
+<a href="https://scholar.google.com" target="_blank">
 <img src="scholar.png" class="icon-img">
 </a>
 
@@ -201,12 +225,12 @@ color:#6b7280;
 <th>#</th>
 <th>Publication</th>
 <th onclick="sortTable('pub-table','year')">Year</th>
-<th onclick="sortTable('pub-table','cite')" 
-    style="cursor:pointer; text-align:center;">
-  <span style="white-space: nowrap;">Citations</span><br>
-  (Google Scholar)
+
+<th onclick="sortTable('pub-table','cite')" class="cite-col">
+<span class="nowrap">Citations</span><br>
+<span class="nowrap">(Google Scholar)</span>
 </th>
-</th>
+
 </tr>
 </thead>
 
@@ -324,61 +348,6 @@ Astronomy & Astrophysics (Accepted)
 </div>
 </td>
 <td>2025</td>
-<td>0</td>
-</tr>
-
-</tbody>
-</table>
-
-<h1>Conference Proceedings</h1>
-
-<table class="pub-table" id="conf-table">
-<thead>
-<tr>
-<th>#</th>
-<th>Publication</th>
-<th onclick="sortTable('conf-table','year')">Year</th>
-<th onclick="sortTable('conf-table','cite')">Citations</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr data-year="2023" data-cite="0">
-<td>1</td>
-<td>
-<div class="title">
-<a href="https://pos.sissa.it/444/942">
-Unraveling the Emission Mechanism of the HBL Source Mrk 180
-</a>
-</div>
-<div class="authors">
-<b>Sandeep Kumar Mondal</b>, Saikat Das, Nayantara Gupta
-</div>
-<div class="journal">
-Proceedings of Science (2023)
-</div>
-</td>
-<td>2023</td>
-<td>0</td>
-</tr>
-
-<tr data-year="2023" data-cite="0">
-<td>2</td>
-<td>
-<div class="title">
-<a href="https://pos.sissa.it/444/790">
-Multi-wavelength study of PKS 0402-362
-</a>
-</div>
-<div class="authors">
-Avik Kumar Das, <b>Sandeep Kumar Mondal</b>
-</div>
-<div class="journal">
-Proceedings of Science (2023)
-</div>
-</td>
-<td>2023</td>
 <td>0</td>
 </tr>
 
