@@ -6,6 +6,7 @@
 <title>Sandeep Kumar Mondal</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
@@ -46,11 +47,19 @@ color:white;
 .icons{
 display:flex;
 align-items:center;
+gap:18px;
 }
 
-.icon-img{
-height:22px;
-margin-left:15px;
+.icons a{
+color:white;
+font-size:18px;
+opacity:0.85;
+transition:0.25s;
+}
+
+.icons a:hover{
+opacity:1;
+transform:translateY(-2px);
 }
 
 /* SIDEBAR */
@@ -96,7 +105,7 @@ color:white;
 padding:60px;
 max-width:1000px;
 margin:auto;
-margin-left:260px;   /* FIXED */
+margin-left:260px;
 }
 
 /* PROFILE */
@@ -157,21 +166,24 @@ color:#374151;
 
 <div class="icons">
 
-<a href="mailto:kumarsandeepmondal@gmail.com">
-<img src="email.png" class="icon-img">
-</a>
-  
-
-<a href="https://scholar.google.com/citations?user=g9bjHIUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-<img src="scholar.png" class="icon-img">
+<a href="mailto:kumarsandeepmondal@gmail.com" title="Email">
+<i class="fas fa-envelope"></i>
 </a>
 
-<a href="https://inspirehep.net/authors/1991836" target="_blank" rel="noopener noreferrer">
-<img src="inspire.png" class="icon-img">
+<a href="https://arxiv.org" target="_blank" title="arXiv">
+<i class="fas fa-file-lines"></i>
 </a>
 
-<a href="https://orcid.org/0000-0003-2445-9935" target="_blank" rel="noopener noreferrer">
-<img src="orcid.png" class="icon-img">
+<a href="https://scholar.google.com/citations?user=g9bjHIUAAAAJ&hl=en" target="_blank" title="Google Scholar">
+<i class="fas fa-graduation-cap"></i>
+</a>
+
+<a href="https://inspirehep.net/authors/1991836" target="_blank" title="INSPIRE-HEP">
+<i class="fas fa-atom"></i>
+</a>
+
+<a href="https://orcid.org/0000-0003-2445-9935" target="_blank" title="ORCID">
+<i class="fab fa-orcid"></i>
 </a>
 
 </div>
