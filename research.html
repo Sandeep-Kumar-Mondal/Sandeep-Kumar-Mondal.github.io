@@ -12,6 +12,7 @@
 body{
 margin:0;
 font-family:'Inter',sans-serif;
+background:#f9fafb;
 }
 
 /* HEADER */
@@ -36,7 +37,6 @@ gap:20px;
 .menu-btn{
 font-size:26px;
 cursor:pointer;
-color:white;
 }
 
 /* ICONS */
@@ -68,7 +68,6 @@ background:linear-gradient(180deg,#022c22,#065f46);
 transition:0.4s;
 padding-top:80px;
 z-index:3;
-overflow-x:hidden;
 }
 
 .sidebar a{
@@ -94,44 +93,33 @@ color:white;
 /* MAIN */
 .main{
 padding:60px;
-max-width:900px;
-margin:auto;
 margin-left:260px;
 }
 
-/* SECTION */
-.section{
-margin-bottom:50px;
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+margin-top:30px;
 }
 
-.section h2{
-color:#065f46;
-border-bottom:2px solid #22c55e;
-padding-bottom:6px;
-margin-bottom:20px;
+/* CARD */
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+transition:0.3s;
 }
 
-/* TEXT */
-p{
-color:#374151;
-line-height:1.7;
-}
-
-/* RESEARCH CARD */
-.highlight{
-margin-bottom:50px;
-}
-
-.highlight-title{
-font-size:20px;
-font-weight:600;
-margin-bottom:10px;
+.card:hover{
+transform:translateY(-5px);
 }
 
 /* IMAGE */
-.figure img{
+.card img{
 width:100%;
-max-width:650px;
 border-radius:6px;
 }
 
@@ -141,17 +129,23 @@ color:#6b7280;
 margin-top:5px;
 }
 
-/* READ MORE BUTTON */
+/* TITLE */
+.card-title{
+font-size:18px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+/* BUTTON */
 .read-more{
 display:inline-block;
-margin-top:15px;
-padding:8px 16px;
+margin-top:12px;
+padding:8px 14px;
 background:#22c55e;
 color:white;
 text-decoration:none;
 border-radius:5px;
 font-size:14px;
-transition:0.3s;
 }
 
 .read-more:hover{
@@ -191,54 +185,36 @@ background:#16a34a;
 <!-- MAIN -->
 <div class="main">
 
-<h1>Research Overview</h1>
+<h1>Highlighted Research</h1>
 
-<p>
-My research focuses on high-energy astrophysics, particularly relativistic jets in AGN, particle acceleration, and multi-wavelength emission processes.
-</p>
+<div class="grid">
 
-<!-- HIGHLIGHTED RESEARCH -->
-<div class="section">
-<h2>Highlighted Research</h2>
+<!-- CARD 1 -->
+<div class="card">
+<div class="card-title">Spectral Modeling of Flares in PKS 0903-57</div>
 
-<!-- WORK 1 -->
-<div class="highlight">
-<div class="highlight-title">
-Spectral Modeling of Flares in PKS 0903-57
-</div>
-
-<p>
-Temporal and spectral analysis of gamma-ray flares to understand particle evolution and jet physics.
-</p>
-
-<div class="figure">
 <img src="images/pks0903_sed.png">
 <div class="caption">Broadband SED during flaring state.</div>
-</div>
-
-<a href="pks0903.html" target="_blank" class="read-more">
-Read More →
-</a>
-</div>
-
-<!-- WORK 2 -->
-<div class="highlight">
-<div class="highlight-title">
-Multi-wavelength Study of Mrk 180
-</div>
 
 <p>
-Study of spectral variability and emission mechanisms using long-term multi-band observations.
+Gamma-ray flare analysis and SED modeling to probe jet physics.
 </p>
 
-<div class="figure">
-<img src="images/mrk180_sed.png">
-<div class="caption">SED fit for Mrk 180.</div>
+<a href="pks0903.html" target="_blank" class="read-more">Read More →</a>
 </div>
 
-<a href="mrk180.html" target="_blank" class="read-more">
-Read More →
-</a>
+<!-- CARD 2 -->
+<div class="card">
+<div class="card-title">Multi-wavelength Study of Mrk 180</div>
+
+<img src="images/mrk180_sed.png">
+<div class="caption">SED modeling of Mrk 180.</div>
+
+<p>
+Multi-band variability and emission mechanism study.
+</p>
+
+<a href="mrk180.html" target="_blank" class="read-more">Read More →</a>
 </div>
 
 </div>
