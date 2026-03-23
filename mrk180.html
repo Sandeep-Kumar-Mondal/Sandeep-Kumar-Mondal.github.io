@@ -9,8 +9,6 @@
 
 <style>
 
-/* 🔴 COPY EXACT SAME CSS FROM research.html (DO NOT CHANGE ANYTHING) */
-
 body{
 margin:0;
 font-family:'Inter',sans-serif;
@@ -99,71 +97,50 @@ padding:60px;
 max-width:900px;
 margin:auto;
 margin-left:260px;
+font-size:15.8px;
+line-height:1.75;
+}
+
+/* TITLE */
+h1{
+font-size:26px;
+color:#064e3b;
+margin-bottom:20px;
 }
 
 /* TEXT */
-p{
-color:#374151;
-line-height:1.7;
-}
-
-.figure{
-margin-top:20px;
-}
-
-.figure img{
-width:100%;
-max-width:600px;
-border-radius:6px;
-}
-
-.caption{
-font-size:13px;
-color:#6b7280;
-margin-top:5px;
-}
-
-/* IMPROVED TEXT READABILITY */
-.main{
-padding:60px;
-max-width:900px;
-margin:auto;
-margin-left:260px;
-font-size:16.5px;
-line-height:1.8;
-}
-
-/* JUSTIFY TEXT (academic style) */
 .main p{
 text-align:justify;
+margin-bottom:16px;
 }
 
-/* FLOAT IMAGE (TEXT WRAPS AROUND) */
+/* 🔥 FIGURE WITH WRAP */
 .figure{
 float:right;
-width:48%;
+width:55%;
 margin:10px 0 20px 30px;
 }
 
-/* IMAGE STYLE */
+/* IMAGE */
 .figure img{
 width:100%;
 border-radius:6px;
 }
 
-/* CAPTION STYLE */
+/* CAPTION */
 .caption{
-font-size:13px;
+font-size:12.8px;
 color:#6b7280;
 margin-top:6px;
 text-align:center;
-line-height:1.5;
+line-height:1.4;
 }
 
-/* CLEAR FLOAT AFTER CONTENT */
+/* CLEAR FIX */
 .clear{
 clear:both;
 }
+
 </style>
 </head>
 
@@ -200,24 +177,34 @@ clear:both;
 <h1>Multi-wavelength Study of Mrk 180</h1>
 
 <p>
-In this work, we present a detailed timing and spectral investigation of the high-frequency-peaked 
-BL Lac object Mrk 180, based on long-term X-ray and gamma-ray observations. Examining the 30-day binned 
-Fermi-LAT gamma-ray light curve, we find that the source remains largely steady over time, showing no clear 
-flaring episodes. This lack of pronounced variability limits the scope for detailed temporal analysis, but 
-provides a stable foundation for broadband modeling. We therefore focus on constructing and modeling the 
-long-term multi-wavelength spectral energy distribution (SED). Our analysis shows that a leptohadronic (pp) 
-scenario provides a consistent and physically motivated description of the observed emission across energy bands.
-Finally, by comparing our simulation results with current observational constraints, we assess the potential role
-of Mrk 180 as a source of ultra-high-energy cosmic rays (UHECRs). We find that, under conservative assumptions for 
-extragalactic magnetic field strengths, Mrk 180 is unlikely to contribute significantly to the Telescope Array (TA) hotspot.
+In this work, we present a timing and detailed spectral investigation of the high-frequency-peaked 
+BL Lac object Mrk 180, based on long-term X-ray and gamma-ray observations. Examination of the 
+30-day binned Fermi-LAT gamma-ray light curve reveals that the source remains largely steady over time, 
+with no clear evidence of prominent flaring episodes. This limits the scope for detailed temporal 
+analysis.
 </p>
 
+<!-- FIGURE (wrapped) -->
 <div class="figure">
-<img src="image/mrk_180_sed.jpg">
+<img src="image/mrk_180_sed.jpg" alt="Mrk 180 SED">
 <div class="caption">
-Leptonic + hadronic (pp) modeling of the multi-wavelength SED of Mrk 180. The grey-shaded region denotes the difference between the attenuated and unattenuated components of the total SED.
+Leptonic + hadronic (pp) modeling of the multi-wavelength SED of Mrk 180. The grey-shaded region represents the difference between attenuated and unattenuated emission components.
 </div>
 </div>
+
+<p>
+We therefore focus on constructing the long-term multi-wavelength spectral energy distribution (SED). 
+Our modelling shows that a leptohadronic (pp) scenario provides a consistent and physically motivated 
+description of the emission across energy bands, capturing both the low- and high-energy components 
+of the spectrum.
+</p>
+
+<p>
+Finally, by comparing our simulation results with current observational constraints, we assess the 
+potential role of Mrk 180 as a source of ultra-high-energy cosmic rays (UHECRs). Under conservative 
+assumptions for extragalactic magnetic field strengths, we find that Mrk 180 is unlikely to contribute 
+significantly to the Telescope Array (TA) hotspot.
+</p>
 
 <div class="clear"></div>
 
