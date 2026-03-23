@@ -9,8 +9,6 @@
 
 <style>
 
-/* 🔴 COPY EXACT SAME CSS FROM research.html (DO NOT CHANGE ANYTHING) */
-
 body{
 margin:0;
 font-family:'Inter',sans-serif;
@@ -99,28 +97,48 @@ padding:60px;
 max-width:900px;
 margin:auto;
 margin-left:260px;
+font-size:15.8px;
+line-height:1.75;
+}
+
+/* TITLE */
+h1{
+font-size:26px;
+color:#064e3b;
+margin-bottom:20px;
 }
 
 /* TEXT */
-p{
-color:#374151;
-line-height:1.7;
+.main p{
+text-align:justify;
+margin-bottom:16px;
 }
 
+/* 🔥 FIGURE ON LEFT */
 .figure{
-margin-top:20px;
+float:left;
+width:55%;
+margin:10px 30px 20px 0;
 }
 
+/* IMAGE */
 .figure img{
 width:100%;
-max-width:700px;
 border-radius:6px;
 }
 
+/* CAPTION */
 .caption{
-font-size:13px;
+font-size:12.8px;
 color:#6b7280;
-margin-top:5px;
+margin-top:6px;
+text-align:center;
+line-height:1.4;
+}
+
+/* CLEAR */
+.clear{
+clear:both;
 }
 
 </style>
@@ -132,8 +150,8 @@ margin-top:5px;
 <div id="sidebar" class="sidebar">
 <span class="close-btn" onclick="toggleNav()">&#8592;</span>
 <a href="index.html">Home</a>
-<a href="publications.html">Publications</a>
 <a href="research.html">Research</a>
+<a href="publications.html">Publications</a>
 <a href="cv.html">CV</a>
 </div>
 
@@ -159,28 +177,36 @@ margin-top:5px;
 <h1>Spectral Modeling of Flares in PKS 0903-57</h1>
 
 <p>
-We performed a detailed temporal and spectral analysis of long-term gamma-ray observations of PKS 0903-57. Multiple flaring episodes were identified and modeled to understand the evolution of the emitting particle population.
+In this work, we present a detailed timing and spectral study of the blazar PKS 0903-57, aimed at understanding the physical processes driving its variability. Through a systematic timing analysis of long-term gamma-ray observations, we identify distinct flaring episodes, along with comparatively low-flux states before and after each event, which we refer to as the pre-flare and post-flare phases.
 </p>
 
-<p>
-Using leptonic spectral energy distribution (SED) modeling, we constrained key jet parameters such as magnetic field strength, electron energy distribution, and Doppler boosting.
-</p>
-
+<!-- FIGURE LEFT -->
 <div class="figure">
-<img src="images/pks0903_sed.png">
-<div class="caption">Broadband SED modeling during flaring state.</div>
+<img src="image/pks0903_sed.jpg" alt="PKS 0903-57 SED">
+<div class="caption">
+Broadband SED modelling of one of the flaring states of PKS 0903-57.
+</div>
 </div>
 
 <p>
-Further analysis includes:
+By modeling the gamma-ray peaks, we estimate the rise and decay times of individual flares, allowing us to explore possible 
+patterns in their temporal evolution. These timescales provide valuable insight into the interplay between particle acceleration 
+and radiative cooling mechanisms within the jet. In addition, we derive the characteristic variability timescale, which places important 
+constraints on the size and location of the emission region.
 </p>
 
-<ul>
-<li>Gamma-ray light curve variability</li>
-<li>Time-resolved spectral fitting</li>
-<li>Jet energetics and particle acceleration</li>
-<li>Physical interpretation of flaring mechanisms</li>
-</ul>
+<p>
+Building on this, we perform a spectral analysis focused on the flaring states. Our modeling suggests that a one-zone leptonic scenario 
+can provide a consistent description of the observed emission, offering a plausible framework for interpreting the underlying radiation 
+processes. However, a more complete picture will require broader and truly simultaneous multi-wavelength coverage.
+</p>
+
+<p>
+The multi-wavelength light curves constructed in this study highlight both the strengths and current limitations of available data, 
+underscoring the importance of coordinated observations in advancing our understanding of relativistic jet physics.
+</p>
+
+<div class="clear"></div>
 
 </div>
 
